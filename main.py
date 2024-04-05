@@ -21,7 +21,7 @@ while True:
 
     if teste == Decimal(0):
         print('OEM: Ondas Eletromagnéticas com Python')
-        print('Desnvolvedores: Marjorie Luize Martins Costa, Paulo Andre de Oliveira Hirata, Diogo Santos Linna, Victor Merker Binda')
+        print('Desenvolvedores: Marjorie Luize Martins Costa, Paulo Andre de Oliveira Hirata, Diogo Santos Linna, Victor Merker Binda')
         # Melhorar a descrição do programa
         print('Descrição')
         #
