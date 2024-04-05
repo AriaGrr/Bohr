@@ -1,4 +1,4 @@
-# Turma 725, Equipe 4:
+# Turma 725, Equipe 1:
 # Marjorie Luize Martins Costa, RA: 24223084-5
 # Paulo Andre de Oliveira Hirata, RA: 24.123.086-1
 # Diogo Santos Linna, RA: 24.123.003-6
