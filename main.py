@@ -339,7 +339,8 @@ while True:
 
     print('Opções:')
     print('1 - Cálculos')
-    print('2 - Limpar variáveis')
+    print('2 - Conversores')
+    print('3 - Limpar variáveis')
     print('0 - Sair')
     option = input('Escolha uma opção: ')
 
@@ -348,6 +349,9 @@ while True:
         menu()
 
     elif option == '2':
+        print('Redirecionando para o menu de conversores...')
+
+    elif option == '3':
         print('Limpando variáveis...')
         limpar_variaveis()
 
