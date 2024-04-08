@@ -76,7 +76,28 @@ def energia_total():
     E = Decimal(K + U)
     return E
 
+# Funções para opções do menu de calculos
+def opcao1():
+    global n, eF, f, lF, r, v, K, U, E, lE
 
+def opcao2():
+    global n, eF, f, lF, r, v, K, U, E, lE
+
+def opcao3():
+# mostrar a resposta de duas formas: número com duas casas decimais e em forma de número inteiro
+    global n, eF, f, lF, r, v, K, U, E, lE
+
+def opcao4():
+# mostrar a resposta de duas formas: número com duas casas decimais e em forma de número inteiro
+    global n, eF, f, lF, r, v, K, U, E, lE
+
+def opcao5():
+# Retorna E em [J] e [eV].
+    global n, eF, f, lF, r, v, K, U, E, lE
+
+def opcao6():
+# Entrada E em [J] ou [eV].
+    global n, eF, f, lF, r, v, K, U, E, lE
 
 # Função para o menu de equações
 def menu():
@@ -107,32 +128,32 @@ def menu():
 
     if option == '1':
         print('Opção 1 selecionada...')
-
+        opcao1()
         limpar_variaveis()
 
     elif option == '2':
         print('Opção 2 selecionada...')
-
+        opcao2()
         limpar_variaveis()
 
     elif option == '3':
         print('Opção 3 selecionada...')
-        # mostrar a resposta de duas formas: número com duas casas decimais e em forma de número inteiro
+        opcao3()
         limpar_variaveis()
 
     elif option == '4':
         print('Opção 4 selecionada...')
-        # mostrar a resposta de duas formas: número com duas casas decimais e em forma de número inteiro
+        opcao4()
         limpar_variaveis()
 
     elif option == '5':
         print('Opção 5 selecionada...')
-        # Retorna E em [J] e [eV].
+        opcao5()
         limpar_variaveis()
 
     elif option == '6':
         print('Opção 6 selecionada...')
-        # Entrada E em [J] ou [eV].
+        opcao6()
         limpar_variaveis()
 
     elif option == '0':
@@ -149,7 +170,7 @@ while True:
     clear_screen()
 
     if teste == Decimal(0):
-        print('OEM: Ondas Eletromagnéticas com Python')
+        print('O átomo de Bohr e quantização com Python')
         print('Desenvolvedores: Marjorie Luize Martins Costa, Paulo Andre de Oliveira Hirata, Diogo Santos Linna, Victor Merker Binda')
         # Melhorar a descrição do programa
         print('Descrição')
@@ -159,13 +180,13 @@ while True:
         teste = Decimal(1)
 
     print('Opções:')
-    print('1 - Equações')
+    print('1 - Cálculos')
     print('2 - Limpar variáveis')
     print('0 - Sair')
     option = input('Escolha uma opção: ')
 
     if option == '1':
-        print('Redirecionando para o menu de equações...')
+        print('Redirecionando para o menu de cálculos...')
         menu()
 
     elif option == '2':
