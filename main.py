@@ -36,6 +36,8 @@ def clear_screen():
 def limpar_variaveis():
     # Variaveis
     n = Decimal(0) # Número quântico (estado)
+    ni = Decimal(0) # Número quântico inicial
+    nf = Decimal(0) # Número quântico final
     eF = Decimal(0) # Energia do fóton absorvido/emitido
     f = Decimal(0) # Frequência do fóton absorvido/emitido
     lF = Decimal (0) # Comprimento de onda (lambda) do fóton absorvido/emitido
@@ -229,7 +231,16 @@ def opcao5():
 def opcao6():
     # Entrada E em [J] ou [eV].
     global n, eF, f, lF, r, v, K, U, E, lE
-
+    print('Digite a energia do fóton (E) em J: ')
+    E = Decimal(input())
+    f = Decimal(E / 6.62607015 * (10 ** -34))
+    lF = Decimal(3 * (10 ** 8) / f)
+    print('Frequência do fóton (f):', f, 'Hz')
+    print('Comprimento de onda (lambda) do Fóton (lF):', lF, 'm')
+    
+    input('Pressione Enter para continuar...')
+    menu()
+    
 # Menus 
 
 # Função para o menu de equações
