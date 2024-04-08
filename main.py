@@ -105,16 +105,15 @@ def metros_nm(num):
 # Opções do menu de conversores imbutido
 
 def conversores(y):
-    global num, num_c, teste2
+    global num, num_c, ow
 
-    if teste2 == 0:
-        print('Deseja fazer uma conversão? (S/N)')
-
-        op = input()
+    print('Deseja fazer uma conversão? (S/N)')
+    op = input()
 
     if op == 'S' or 's':
         ow = 1
     while ow == 1:
+        ow = 0
         print('Escolha o valor que deseja converter: ')
         x = input()
         if y == 1:
@@ -230,13 +229,33 @@ def conversores(y):
             print('6 - kWh')
             print('7 - Wh')
 
+            output = input()
+            if output == '1':
+                print ('Opção 1 selecionada...')
+                # Colocar logicas de conversão
+            elif output == '2':
+                print ('Opção 2 selecionada...')
+                # Colocar logicas de conversão
+            elif output == '3':
+                print ('Opção 3 selecionada...')
+                # Colocar logicas de conversão
+            elif output == '4':
+                print ('Opção 4 selecionada...')
+                # Colocar logicas de conversão
+            elif output == '5':
+                print ('Opção 5 selecionada...')
+                # Colocar logicas de conversão
+            elif output == '6':
+                print ('Opção 6 selecionada...')
+                # Colocar logicas de conversão
+            elif output == '7':
+                print ('Opção 7 selecionada...')
+                # Colocar logicas de conversão
 
-
+        conversores(y)
+        
     else:
-        print('Voltando ao menu...')
         input('Pressione Enter para continuar...')
-        limpar_variaveis()
-        menu()
         
 def escolhas1():
     print('Digite o número da opção que deseja converter: ')
