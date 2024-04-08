@@ -29,6 +29,9 @@ U = Decimal (0) # Energia potencial
 E = Decimal (0) # Energia total
 lE = Decimal (0) # Comprimento de onda do elétron
 
+num = Decimal(0) # Número 
+num_c = Decimal(0) # Número convertido
+
 # Função para limpar a tela do terminal
 def clear_screen():
     print('\033[H\033[J')
@@ -48,6 +51,8 @@ def limpar_variaveis():
     U = Decimal (0) # Energia potencial
     E = Decimal (0) # Energia total
     lE = Decimal (0) # Comprimento de onda do elétron
+    num = Decimal(0) # Número 
+    num_c = Decimal(0) # Número convertido
 
 # Funções para cálculos
 
@@ -88,6 +93,80 @@ def energia_total():
     E = -13.6 / (n ** 2)
     return E
 
+# Funções para conversões
+# Todos os conversores vão para uma unidade padrão e depois convertem para a unidade desejada
+
+# Conversor de metros -> nm
+def metros_nm(num):
+    num_c = num * 1e9
+    return num_c
+
+# Opções do menu de conversores imbutido
+
+def conversores(x):
+    global num, num_c
+    num = x # Recebe o valor a ser convertido
+    # Conversor de metros, colocar as saidas que saem em metros
+    if x == r or x == v or x == lE:
+        print('Digite a saida desejada: ')
+        print('1 - cm')
+        print('2 - nm')
+        print('3 - km')
+        print('4 - mm')
+        print('5 - um')
+        print('6 - pm')
+        option = input()
+        if option == '1':
+            print ('Opção 1 selecionada...')
+            # Colocar logicas de conversão
+        elif option == '2':
+            print ('Opção 2 selecionada...')
+            metros_nm(num)
+            print(f'{num:.4g} m = {num_c:.4g} nm')
+
+        elif option == '3':
+            print ('Opção 3 selecionada...')
+            # Colocar logicas de conversão
+        elif option == '4':
+            print ('Opção 4 selecionada...')
+            # Colocar logicas de conversão
+        elif option == '5':
+            print ('Opção 5 selecionada...')
+            # Colocar logicas de conversão
+        elif option == '6':
+            print ('Opção 6 selecionada...')
+            # Colocar logicas de conversão
+        
+def escolhas1():
+    print('Digite o número da opção que deseja converter: ')
+    option = input()
+    if option == '1':
+        print('Opção 1 selecionada...')
+        conversores(r)
+
+    elif option == '2':
+        print('Opção 2 selecionada...')
+        conversores(v)
+
+    elif option == '3':
+        print('Opção 3 selecionada...')
+        conversores(K)
+
+    elif option == '4':
+        print('Opção 4 selecionada...')
+        conversores(U)
+
+    elif option == '5':
+        print('Opção 5 selecionada...')
+        conversores(E)
+
+    elif option == '6':
+        print('Opção 6 selecionada...')
+        conversores(lE)
+
+    else:
+        print('Opção inválida. Escolha uma opção válida.')
+
 # Opções do menu de cálculos
 
 # Entrada: n ; Saida: r, v, lE, K, U, E.
@@ -101,12 +180,32 @@ def opcao1():
     U = energia_potencial()
     E = energia_total()
     lE = comprimento_onda_eletron()
-    print('Raio da órbita (r):', r, 'm')
-    print('Velocidade (v):', v, 'm/s')
-    print('Energia cinética (K):', K, 'eV')
-    print('Energia potencial (U):', U, 'eV')
-    print('Energia total (E):', E, 'eV')
-    print('Comprimento de onda do elétron (lE):', lE, 'm')
+    clear_screen()
+    print('Entrada:')
+    print(f'Número quântico (n): {n}')
+    print('Saída:')
+    print(f'1 - Raio da órbita (r): {r:.4g} m')
+    print(f'2 - Velocidade (v): {v:.4g} m/s')
+    print(f'3 - Energia cinética (K): {K:.4g} eV')
+    print(f'4 - Energia potencial (U): {U:.4g} eV')
+    print(f'5 - Energia total (E): {E:.4g} eV')
+    print(f'6 - Comprimento de onda do elétron (lE): {lE:.4g} m')
+
+    print('Deseja converter algum valor da saida? (S/N)')
+    option = input()
+    if option == 'S' or option == 's':
+
+    else:
+        print('Voltando ao menu...')
+        input('Pressione Enter para continuar...')
+        limpar_variaveis()
+        menu()
+    
+    input('Pressione Enter para continuar...')
+    limpar_variaveis()
+    menu()
+
+        
 
 # Entrada: n inicial e final ; Saida: eF, f e lF.
 def opcao2():
