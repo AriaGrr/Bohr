@@ -12,8 +12,8 @@ from decimal import Decimal
 teste = Decimal(0) # Variável para testar se é a primeira vez que o programa é executado
 
 # Constantes
-h = Decimal(6.62607015 * 10 ** -34) # Constante de Planck em J.s
-mE = Decimal(9.10938356 * 10 ** -31) # Massa do elétron em kg
+h = 6.62607015 * 10 ** -34 # Constante de Planck em J.s
+mE = 9.10938356 * 10 ** -31 # Massa do elétron em kg
 
 # Variaveis
 n = Decimal(0) # Número quântico
@@ -51,47 +51,41 @@ def limpar_variaveis():
 
 # Funções para cálculos
 
-# Conferir
 # Cálculo do raio da órbita (m)
 def raio_orbita():
     #r = Decimal((n ** 2) * (h ** 2) / (4 * (math.pi ** 2) * 9.10938356 * (10 ** -31) * (9 * (10 ** 9))))
-    r = Decimal((n ** 2) * 5.29 * (10 ** -11))
+    r = (n ** 2) * 5.29 * (10 ** -11)
     return r
 
-# Conferir
 # Cálculo da velocidade (m/s)
 def velocidade():
     #v = Decimal(2 * math.pi * (3 * (10 ** 8)) / lE)
-    v = Decimal(2.187 * (10 ** 6) / n)
+    v = 2.187 * (10 ** 6) / n
     return v
 
-# Conferir
 # Cálculo do comprimento de onda De Broglie do elétron (m)
 def comprimento_onda_eletron():
     #lE = Decimal(h / (9.10938356 * (10 ** -31) * v))
     #lE = Decimal(5,29 * (10 ** -11) / n)
-    lE = Decimal(h / (mE * v))
+    lE = h / (mE * v)
     return lE
 
-# Conferir
 # Cálculo da energia cinética (eV)
 def energia_cinetica():
     #K = Decimal((1 / 2) * (9.10938356 * (10 ** -31)) * (v ** 2))
-    K = Decimal(+13.6 / n ** 2)
+    K = +13.6 / n ** 2
     return K
 
-# Conferir
 # Cálculo da energia potencial (eV)
 def energia_potencial():
     #U = Decimal(-1 * (9 * (10 ** 9)) * (1.60217662 * (10 ** -19)) / r)
-    U = Decimal(-27.2 / n ** 2)
+    U = -27.2 / n ** 2
     return U
 
-# Conferir
 # Cálculo da energia total (eV)
 def energia_total():
     #E = Decimal(K + U)
-    E = Decimal(-13.6 / n ** 2)
+    E = -13.6 / (n ** 2)
     return E
 
 # Opções do menu de cálculos
@@ -100,19 +94,19 @@ def energia_total():
 def opcao1():
     global n, eF, f, lF, r, v, K, U, E, lE
     print('Digite o número quântico (n): ')
-    n = Decimal(input())
+    n = float(input())
     r = raio_orbita()
     v = velocidade()
-    lE = comprimento_onda_eletron()
     K = energia_cinetica()
     U = energia_potencial()
     E = energia_total()
+    lE = comprimento_onda_eletron()
     print('Raio da órbita (r):', r, 'm')
     print('Velocidade (v):', v, 'm/s')
+    print('Energia cinética (K):', K, 'eV')
+    print('Energia potencial (U):', U, 'eV')
+    print('Energia total (E):', E, 'eV')
     print('Comprimento de onda do elétron (lE):', lE, 'm')
-    print('Energia cinética (K):', K, 'J')
-    print('Energia potencial (U):', U, 'J')
-    print('Energia total (E):', E, 'J')
 
 # Entrada: n inicial e final ; Saida: eF, f e lF.
 def opcao2():
@@ -257,12 +251,64 @@ def opcao6():
     
 # Menus 
 
-# Função para o menu de equações
+# Função para o menu de conversores
 def menu():
     global n, eF, f, lF, r, v, K, U, E, lE
     clear_screen()
     print('Opções de entradas:')
     # 
+    print('1 - m / cm / nm / km / mm / um / pm')
+    # 
+    print('2 - eV / J / cal / kcal / BTU / kWh / Wh')
+    # 
+    print('3 - ')
+    # 
+    print('4 - ')
+    # 
+    print('5 - ')
+    # 
+    print('6 - ')
+
+    print('0 - Voltar!')
+    option = input('Escolha uma opção: ')
+
+    if option == '1':
+        print('Opção 1 selecionada...')
+
+    elif option == '2':
+        print('Opção 2 selecionada...')
+
+
+    elif option == '3':
+        print('Opção 3 selecionada...')
+
+
+    elif option == '4':
+        print('Opção 4 selecionada...')
+
+
+    elif option == '5':
+        print('Opção 5 selecionada...')
+
+
+    elif option == '6':
+        print('Opção 6 selecionada...')
+
+    elif option == '0':
+        clear_screen()
+        return
+    else:
+        print('Opção inválida. Escolha uma opção válida.')
+
+    input('Pressione Enter para continuar...')
+    menu()
+
+# Função para o menu de equações
+def menu():
+    global n, eF, f, lF, r, v, K, U, E, lE
+    clear_screen()
+    print('Opções de entradas:')
+    # Correta
     print('1 - n:')
     print('Retorna r, v, lE, K, U, E.')
     # 
