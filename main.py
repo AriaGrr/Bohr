@@ -16,6 +16,8 @@ h = Decimal(6.62607015 * 10 ** -34) # Constante de Planck em J.s
 
 # Variaveis
 n = Decimal(0) # Número quântico
+ni = Decimal(0) # Número quântico inicial
+nf = Decimal(0) # Número quântico final
 eF = Decimal(0) # Energia do fóton absorvido/emitido
 f = Decimal(0) # Frequência do fóton absorvido/emitido
 lF = Decimal (0) # Comprimento de onda (lambda) do fóton absorvido/emitido
@@ -76,35 +78,159 @@ def energia_total():
     E = Decimal(K + U)
     return E
 
-# Funções para opções do menu de calculos
+# Opções do menu de cálculos
 
 # Entrada: n ; Saida: r, v, lE, K, U, E.
 def opcao1():
     global n, eF, f, lF, r, v, K, U, E, lE
+    print('Digite o número quântico (n): ')
+    n = Decimal(input())
+    r = raio_orbita()
+    v = velocidade()
+    lE = comprimento_onda_eletron()
+    K = energia_cinetica()
+    U = energia_potencial()
+    E = energia_total()
+    print('Raio da órbita (r):', r, 'm')
+    print('Velocidade (v):', v, 'm/s')
+    print('Comprimento de onda do elétron (lE):', lE, 'm')
+    print('Energia cinética (K):', K, 'J')
+    print('Energia potencial (U):', U, 'J')
+    print('Energia total (E):', E, 'J')
 
 # Entrada: n inicial e final ; Saida: eF, f e lF.
 def opcao2():
     global n, eF, f, lF, r, v, K, U, E, lE
+    print('Digite o número quântico inicial (ni): ')
+    ni = Decimal(input())
+    print('Digite o número quântico final (nf): ')
+    nf = Decimal(input())
+    eF = Decimal(13.6 * ((1 / (ni ** 2)) - (1 / (nf ** 2))))
+    f = Decimal(eF / h)
+    lF = Decimal(3 * (10 ** 8) / f)
+    print('Energia do fóton (eF):', eF, 'eV')
+    print('Frequência do fóton (f):', f, 'Hz')
+    print('Comprimento de onda (lambda) do Fóton (lF):', lF, 'm')
+
 
 # Entrada: n inicial ou final + f ou lF (absorvido) ; Saida: n final ou n inicial.
 def opcao3():
     # Mostrar a resposta de duas formas: número com duas casas decimais e em forma de número inteiro
     global n, eF, f, lF, r, v, K, U, E, lE
+    print('Opções de entradas:')
+    # Retorna n final
+    print('1 - n inicial + f') 
+    print('2 - n inicial + lF (absorvido)')
+    # Retorna n inicial
+    print('3 - n final + f')
+    print('4 - n final + lF (absorvido)')
+    option = input('Escolha uma opção: ')
+
+    if option == '1':
+        print('Opção 1 selecionada...')
+        ni = Decimal(input('Digite o número quântico inicial (ni): '))
+        f = Decimal(input('Digite a frequência (f) em Hz: '))
+        nf = Decimal(ni + 1)
+        print('Número quântico final (nf):', nf)
+    elif option == '2':
+        print('Opção 2 selecionada...')
+        ni = Decimal(input('Digite o número quântico inicial (ni): '))
+        lF = Decimal(input('Digite o comprimento de onda (lambda) do Fóton (lF) em m: '))
+        nf = Decimal(ni + 1)
+        print('Número quântico final (nf):', nf)
+    elif option == '3':
+        print('Opção 3 selecionada...')
+        nf = Decimal(input('Digite o número quântico final (nf): '))
+        f = Decimal(input('Digite a frequência (f) em Hz: '))
+        ni = Decimal(nf - 1)
+        print('Número quântico inicial (ni):', ni)
+    elif option == '4':
+        print('Opção 4 selecionada...')
+        nf = Decimal(input('Digite o número quântico final (nf): '))
+        lF = Decimal(input('Digite o comprimento de onda (lambda) do Fóton (lF) em m: '))
+        ni = Decimal(nf - 1)
+        print('Número quântico inicial (ni):', ni)
+
 
 # Entrada: n inicial ou final + f ou lF (emitido) ; Saida: n final ou n inicial.
 def opcao4():
     # Mostrar a resposta de duas formas: número com duas casas decimais e em forma de número inteiro
     global n, eF, f, lF, r, v, K, U, E, lE
+    print('Opções de entradas:')
+    print('1 - n inicial + f')
+    print('2 - n inicial + lF (emitido)')
+    print('3 - n final + f')
+    print('4 - n final + lF (emitido)')
+    option = input('Escolha uma opção: ')
+
+    if option == '1':
+        print('Opção 1 selecionada...')
+        ni = Decimal(input('Digite o número quântico inicial (ni): '))
+        f = Decimal(input('Digite a frequência (f) em Hz: '))
+        nf = Decimal(ni + 1)
+        print('Número quântico final (nf):', nf)
+    elif option == '2':
+        print('Opção 2 selecionada...')
+        ni = Decimal(input('Digite o número quântico inicial (ni): '))
+        lF = Decimal(input('Digite o comprimento de onda (lambda) do Fóton (lF) em m: '))
+        nf = Decimal(ni + 1)
+        print('Número quântico final (nf):', nf)
+    elif option == '3':
+        print('Opção 3 selecionada...')
+        nf = Decimal(input('Digite o número quântico final (nf): '))
+        f = Decimal(input('Digite a frequência (f) em Hz: '))
+        ni = Decimal(nf - 1)
+        print('Número quântico inicial (ni):', ni)
+    elif option == '4':
+        print('Opção 4 selecionada...')
+        nf = Decimal(input('Digite o número quântico final (nf): '))
+        lF = Decimal(input('Digite o comprimento de onda (lambda) do Fóton (lF) em m: '))
+        ni = Decimal(nf - 1)
+        print('Número quântico inicial (ni):', ni)
+    else:
+        print('Opção inválida. Escolha uma opção válida.')
+
+    input('Pressione Enter para continuar...')
+    menu()
 
 # Entrada: f ou lF; Saida: E.
 def opcao5():
     # Retorna E em [J] e [eV].
     global n, eF, f, lF, r, v, K, U, E, lE
+    print('Opções de entradas:')
+    print('1 - Frequência (f)')
+    print('2 - Comprimento de onda (lambda) do Fóton (lF)')
+    option = input('Escolha uma opção: ')
+
+    if option == '1':
+        print('Opção 1 selecionada...')
+        # Corrigir a entrada
+        f = Decimal(input('Digite a frequência (f) em Hz: '))
+        lF = Decimal(3 * (10 ** 8) / f)
+        E = Decimal(6.62607015 * (10 ** -34) * f)
+        print('Comprimento de onda (lambda) do Fóton (lF):', lF, 'm')
+        print('Energia do fóton (E):', E, 'J')
+    elif option == '2':
+        print('Opção 2 selecionada...')
+        lF = Decimal(input('Digite o comprimento de onda (lambda) do Fóton (lF) em m: '))
+        f = Decimal(3 * (10 ** 8) / lF)
+        E = Decimal(6.62607015 * (10 ** -34) * f)
+        print('Frequência (f):', f, 'Hz')
+        print('Energia do fóton (E):', E, 'J')
+    else:
+        print('Opção inválida. Escolha uma opção válida.')
+
+    input('Pressione Enter para continuar...')
+    menu()
+
+
 
 # Entrada: E ; Saida: f e lF.
 def opcao6():
     # Entrada E em [J] ou [eV].
     global n, eF, f, lF, r, v, K, U, E, lE
+
+# Menus 
 
 # Função para o menu de equações
 def menu():
