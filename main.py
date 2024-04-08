@@ -11,9 +11,138 @@ from decimal import Decimal
 # Variaveis globais
 teste = Decimal(0) # Variável para testar se é a primeira vez que o programa é executado
 
+# Constantes
+h = Decimal(6.62607015 * 10 ** -34) # Constante de Planck em J.s
+
+# Variaveis
+n = Decimal(0) # Número quântico
+eF = Decimal(0) # Energia do fóton absorvido/emitido
+f = Decimal(0) # Frequência do fóton absorvido/emitido
+lF = Decimal (0) # Comprimento de onda (lambda) do fóton absorvido/emitido
+r = Decimal (0) # Raio da órbita
+v = Decimal (0) # Velocidade
+K = Decimal (0) # Energia cinética
+U = Decimal (0) # Energia potencial
+E = Decimal (0) # Energia total
+lE = Decimal (0) # Comprimento de onda do elétron
+
 # Função para limpar a tela do terminal
 def clear_screen():
     print('\033[H\033[J')
+
+# Limpa as variaveis
+def limpar_variaveis():
+    # Variaveis
+    n = Decimal(0) # Número quântico (estado)
+    eF = Decimal(0) # Energia do fóton absorvido/emitido
+    f = Decimal(0) # Frequência do fóton absorvido/emitido
+    lF = Decimal (0) # Comprimento de onda (lambda) do fóton absorvido/emitido
+    r = Decimal (0) # Raio da órbita
+    v = Decimal (0) # Velocidade
+    K = Decimal (0) # Energia cinética
+    U = Decimal (0) # Energia potencial
+    E = Decimal (0) # Energia total
+    lE = Decimal (0) # Comprimento de onda do elétron
+
+# Funções para cálculos
+
+# Cálculo do raio da órbita
+def raio_orbita():
+    r = Decimal((n ** 2) * (h ** 2) / (4 * (math.pi ** 2) * 9.10938356 * (10 ** -31) * (9 * (10 ** 9))))
+    return r
+
+# Cálculo da velocidade
+def velocidade():
+    v = Decimal(2 * math.pi * (3 * (10 ** 8)) / lE)
+    return v
+
+# Cálculo do comprimento de onda do fóton
+def comprimento_onda_eletron():
+    lE = Decimal(h / (9.10938356 * (10 ** -31) * v))
+    return lE
+
+# Cálculo da energia cinética
+def energia_cinetica():
+    K = Decimal((1 / 2) * (9.10938356 * (10 ** -31)) * (v ** 2))
+    return K
+
+# Cálculo da energia potencial
+def energia_potencial():
+    U = Decimal(-1 * (9 * (10 ** 9)) * (1.60217662 * (10 ** -19)) / r)
+    return U
+
+# Cálculo da energia total
+def energia_total():
+    E = Decimal(K + U)
+    return E
+
+
+
+# Função para o menu de equações
+def menu():
+    global n, eF, f, lF, r, v, K, U, E, lE
+    clear_screen()
+    print('Opções de entradas:')
+    # 
+    print('1 - n:')
+    print('Retorna r, v, lE, K, U, E.')
+    # 
+    print('2 - n inicial e final:')
+    print('Retorna eF, f e lF.')
+    # 
+    print('3 - n inicial ou final + f ou lF (absorvido):')
+    print('Retorna n final ou n inicial.')
+    # 
+    print('4 - n inicial ou final + f ou lF (emitido):')
+    print('Retorna n final ou n inicial.')
+    # 
+    print('5 - f ou lF:')
+    print('Retorna E.')
+    # 
+    print('6 - E:')
+    print('Retorna f e lF.')
+
+    print('0 - Voltar!')
+    option = input('Escolha uma opção: ')
+
+    if option == '1':
+        print('Opção 1 selecionada...')
+
+        limpar_variaveis()
+
+    elif option == '2':
+        print('Opção 2 selecionada...')
+
+        limpar_variaveis()
+
+    elif option == '3':
+        print('Opção 3 selecionada...')
+        # mostrar a resposta de duas formas: número com duas casas decimais e em forma de número inteiro
+        limpar_variaveis()
+
+    elif option == '4':
+        print('Opção 4 selecionada...')
+        # mostrar a resposta de duas formas: número com duas casas decimais e em forma de número inteiro
+        limpar_variaveis()
+
+    elif option == '5':
+        print('Opção 5 selecionada...')
+        # Retorna E em [J] e [eV].
+        limpar_variaveis()
+
+    elif option == '6':
+        print('Opção 6 selecionada...')
+        # Entrada E em [J] ou [eV].
+        limpar_variaveis()
+
+    elif option == '0':
+        clear_screen()
+        return
+    else:
+        print('Opção inválida. Escolha uma opção válida.')
+
+    input('Pressione Enter para continuar...')
+    menu()
 
 # Menu principal
 while True:
@@ -30,20 +159,18 @@ while True:
         teste = Decimal(1)
 
     print('Opções:')
-    print('1 - Teste')
-    print('2 - Teste')
-    print('3 - Teste')
+    print('1 - Equações')
+    print('2 - Limpar variáveis')
     print('0 - Sair')
     option = input('Escolha uma opção: ')
 
     if option == '1':
-        print('Teste')
+        print('Redirecionando para o menu de equações...')
+        menu()
 
     elif option == '2':
-        print('Teste')
-
-    elif option == '3':
         print('Limpando variáveis...')
+        limpar_variaveis()
 
     elif option == '0':
         break
