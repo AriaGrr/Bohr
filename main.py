@@ -13,6 +13,7 @@ teste = Decimal(0) # Variável para testar se é a primeira vez que o programa �
 
 # Constantes
 h = Decimal(6.62607015 * 10 ** -34) # Constante de Planck em J.s
+mE = Decimal(9.10938356 * 10 ** -31) # Massa do elétron em kg
 
 # Variaveis
 n = Decimal(0) # Número quântico
@@ -50,34 +51,47 @@ def limpar_variaveis():
 
 # Funções para cálculos
 
-# Cálculo do raio da órbita
+# Conferir
+# Cálculo do raio da órbita (m)
 def raio_orbita():
-    r = Decimal((n ** 2) * (h ** 2) / (4 * (math.pi ** 2) * 9.10938356 * (10 ** -31) * (9 * (10 ** 9))))
+    #r = Decimal((n ** 2) * (h ** 2) / (4 * (math.pi ** 2) * 9.10938356 * (10 ** -31) * (9 * (10 ** 9))))
+    r = Decimal((n ** 2) * 5.29 * (10 ** -11))
     return r
 
-# Cálculo da velocidade
+# Conferir
+# Cálculo da velocidade (m/s)
 def velocidade():
-    v = Decimal(2 * math.pi * (3 * (10 ** 8)) / lE)
+    #v = Decimal(2 * math.pi * (3 * (10 ** 8)) / lE)
+    v = Decimal(2.187 * (10 ** 6) / n)
     return v
 
-# Cálculo do comprimento de onda do fóton
+# Conferir
+# Cálculo do comprimento de onda De Broglie do elétron (m)
 def comprimento_onda_eletron():
-    lE = Decimal(h / (9.10938356 * (10 ** -31) * v))
+    #lE = Decimal(h / (9.10938356 * (10 ** -31) * v))
+    #lE = Decimal(5,29 * (10 ** -11) / n)
+    lE = Decimal(h / (mE * v))
     return lE
 
-# Cálculo da energia cinética
+# Conferir
+# Cálculo da energia cinética (eV)
 def energia_cinetica():
-    K = Decimal((1 / 2) * (9.10938356 * (10 ** -31)) * (v ** 2))
+    #K = Decimal((1 / 2) * (9.10938356 * (10 ** -31)) * (v ** 2))
+    K = Decimal(+13.6 / n ** 2)
     return K
 
-# Cálculo da energia potencial
+# Conferir
+# Cálculo da energia potencial (eV)
 def energia_potencial():
-    U = Decimal(-1 * (9 * (10 ** 9)) * (1.60217662 * (10 ** -19)) / r)
+    #U = Decimal(-1 * (9 * (10 ** 9)) * (1.60217662 * (10 ** -19)) / r)
+    U = Decimal(-27.2 / n ** 2)
     return U
 
-# Cálculo da energia total
+# Conferir
+# Cálculo da energia total (eV)
 def energia_total():
-    E = Decimal(K + U)
+    #E = Decimal(K + U)
+    E = Decimal(-13.6 / n ** 2)
     return E
 
 # Opções do menu de cálculos
