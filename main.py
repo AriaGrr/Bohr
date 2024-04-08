@@ -88,22 +88,22 @@ def opcao2():
 
 # Entrada: n inicial ou final + f ou lF (absorvido) ; Saida: n final ou n inicial.
 def opcao3():
-# mostrar a resposta de duas formas: número com duas casas decimais e em forma de número inteiro
+    # Mostrar a resposta de duas formas: número com duas casas decimais e em forma de número inteiro
     global n, eF, f, lF, r, v, K, U, E, lE
 
 # Entrada: n inicial ou final + f ou lF (emitido) ; Saida: n final ou n inicial.
 def opcao4():
-# mostrar a resposta de duas formas: número com duas casas decimais e em forma de número inteiro
+    # Mostrar a resposta de duas formas: número com duas casas decimais e em forma de número inteiro
     global n, eF, f, lF, r, v, K, U, E, lE
 
 # Entrada: f ou lF; Saida: E.
 def opcao5():
-# Retorna E em [J] e [eV].
+    # Retorna E em [J] e [eV].
     global n, eF, f, lF, r, v, K, U, E, lE
 
 # Entrada: E ; Saida: f e lF.
 def opcao6():
-# Entrada E em [J] ou [eV].
+    # Entrada E em [J] ou [eV].
     global n, eF, f, lF, r, v, K, U, E, lE
 
 # Função para o menu de equações
