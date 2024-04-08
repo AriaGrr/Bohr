@@ -77,24 +77,31 @@ def energia_total():
     return E
 
 # Funções para opções do menu de calculos
+
+# Entrada: n ; Saida: r, v, lE, K, U, E.
 def opcao1():
     global n, eF, f, lF, r, v, K, U, E, lE
 
+# Entrada: n inicial e final ; Saida: eF, f e lF.
 def opcao2():
     global n, eF, f, lF, r, v, K, U, E, lE
 
+# Entrada: n inicial ou final + f ou lF (absorvido) ; Saida: n final ou n inicial.
 def opcao3():
 # mostrar a resposta de duas formas: número com duas casas decimais e em forma de número inteiro
     global n, eF, f, lF, r, v, K, U, E, lE
 
+# Entrada: n inicial ou final + f ou lF (emitido) ; Saida: n final ou n inicial.
 def opcao4():
 # mostrar a resposta de duas formas: número com duas casas decimais e em forma de número inteiro
     global n, eF, f, lF, r, v, K, U, E, lE
 
+# Entrada: f ou lF; Saida: E.
 def opcao5():
 # Retorna E em [J] e [eV].
     global n, eF, f, lF, r, v, K, U, E, lE
 
+# Entrada: E ; Saida: f e lF.
 def opcao6():
 # Entrada E em [J] ou [eV].
     global n, eF, f, lF, r, v, K, U, E, lE
