@@ -31,7 +31,8 @@ E = Decimal (0) # Energia total
 lE = Decimal (0) # Comprimento de onda do elétron
 
 num = Decimal(0) # Número 
-num_c = Decimal(0) # Número convertido
+num_c = Decimal(0) # Número convertido 1
+num_c2 = Decimal(0) # Número convertido 2
 
 # Função para limpar a tela do terminal
 def clear_screen():
@@ -101,6 +102,77 @@ def energia_total():
 def metros_nm(num):
     num_c = num * 1e9
     return num_c
+
+# Conversor de nm -> metros
+def nm_metros(num):
+    num_c = num / 1e9
+    return num_c
+
+# Conversor de metros -> cm
+def metros_cm(num):
+    num_c = num * 100
+    return num_c
+
+# Conversor de cm -> metros
+def cm_metros(num):
+    num_c = num / 100
+    return num_c
+
+# Conversor de metros -> km
+def metros_km(num):
+    num_c = num / 1000
+    return num_c
+
+# Conversor de km -> metros
+def km_metros(num):
+    num_c = num * 1000
+    return num_c
+
+# Conversor de metros -> mm
+def metros_mm(num):
+    num_c = num * 1000
+    return num_c
+
+# Conversor de mm -> metros
+def mm_metros(num):
+    num_c = num / 1000
+    return num_c
+
+# Conversor de metros -> um
+def metros_um(num):
+    num_c = num * 1e6
+    return num_c
+
+# Conversor de um -> metros
+def um_metros(num):
+    num_c = num / 1e6
+    return num_c
+
+# Conversor de metros -> pm
+def metros_pm(num):
+    num_c = num * 1e12
+    return num_c
+
+# Conversor de pm -> metros
+def pm_metros(num):
+    num_c = num / 1e12
+    return num_c
+
+# Conversor de eV -> J
+def eV_J(num):
+    num_c = num * 1.60217662 * (10 ** -19)
+    return num_c
+
+# Conversor de J -> eV
+def J_eV(num):
+    num_c = num / 1.60217662 * (10 ** -19)
+    return num_c
+
+# Conversor de eV -> cal
+def eV_cal(num):
+    num_c = num * 2.3900573613767 * (10 ** 20)
+    return num_c
+
 
 # Opções do menu de conversores imbutido
 
@@ -244,6 +316,63 @@ def metros_nm(num):
 
 #     else:
 #         print('Opção inválida. Escolha uma opção válida.')
+
+def conversor1():
+    global num, num_c, num_c2
+    print('Digite o número que deseja converter: ')
+    num = Decimal(input())
+    print('Digite a unidade de medida do número: ')
+    print('1 - m')
+    print('2 - cm')
+    print('3 - nm')
+    print('4 - km')
+    print('5 - mm')
+    print('6 - um')
+    print('7 - pm')
+    entrada = input('Escolha uma opção: ')
+    if entrada == 1:
+        num_c = num
+    elif entrada == 2:
+        num_c = cm_metros(num)
+    elif entrada == 3:
+        num_c = nm_metros(num)
+    elif entrada == 4:
+        num_c = km_metros(num)
+    elif entrada == 5:
+        num_c = mm_metros(num)
+    elif entrada == 6:
+        num_c = um_metros(num)
+    elif entrada == 7:
+        num_c = pm_metros(num)
+    else:
+        print('Opção inválida. Escolha uma opção válida.')
+
+    print('Digite a unidade de medida desejada: ')
+    print('1 - m')
+    print('2 - cm')
+    print('3 - nm')
+    print('4 - km')
+    print('5 - mm')
+    print('6 - um')
+    print('7 - pm')
+    saida = input('Escolha uma opção: ')
+    if saida == 1:
+        num_c2 = num_c
+    elif saida == 2:
+        num_c2 = metros_cm(num_c)
+    elif saida == 3:
+        num_c2 = metros_nm(num_c)
+    elif saida == 4:
+        num_c2 = metros_km(num_c)
+    elif saida == 5:
+        num_c2 = metros_mm(num_c)
+    elif saida == 6:
+        num_c2 = metros_um(num_c)
+    elif saida == 7:
+        num_c2 = metros_pm(num_c)
+    else:
+        print('Opção inválida. Escolha uma opção válida.')
+
 
 # Opções do menu de cálculos
 
@@ -421,7 +550,7 @@ def opcao6():
 # Menus 
 
 # Função para o menu de conversores
-def menu():
+def menu_conversores():
     global n, eF, f, lF, r, v, K, U, E, lE
     clear_screen()
     print('Opções de entradas:')
@@ -443,6 +572,8 @@ def menu():
 
     if option == '1':
         print('Opção 1 selecionada...')
+        conversor1()
+        limpar_variaveis()
 
     elif option == '2':
         print('Opção 2 selecionada...')
@@ -565,7 +696,8 @@ while True:
 
     elif option == '2':
         print('Redirecionando para o menu de conversores...')
-
+        menu_conversores()
+        
     elif option == '3':
         print('Limpando variáveis...')
         limpar_variaveis()
