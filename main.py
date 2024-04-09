@@ -10,7 +10,7 @@ from decimal import Decimal
 
 # Variaveis globais
 teste = Decimal(0) # Variável para testar se é a primeira vez que o programa é executado
-ow = 0 # Variável para armazenar a opção escolhida no menu de conversores  
+#ow = 0 # Variável para armazenar a opção escolhida no menu de conversores  
 
 # Constantes
 h = 6.62607015 * 10 ** -34 # Constante de Planck em J.s
@@ -55,6 +55,7 @@ def limpar_variaveis():
     lE = Decimal (0) # Comprimento de onda do elétron
     num = Decimal(0) # Número 
     num_c = Decimal(0) # Número convertido
+    num_c2 = Decimal(0) # Número convertido
 
 # Funções para cálculos
 
@@ -319,60 +320,111 @@ def eV_cal(num):
 
 def conversor1():
     global num, num_c, num_c2
+    a = ''
+    b = ''
+
     print('Digite o número que deseja converter: ')
-    num = Decimal(input())
+    num = float(input())
     print('Digite a unidade de medida do número: ')
+    # Correto
     print('1 - m')
+    #
     print('2 - cm')
+    #
     print('3 - nm')
+    #
     print('4 - km')
+    #
     print('5 - mm')
+    #
     print('6 - um')
+    #
     print('7 - pm')
     entrada = input('Escolha uma opção: ')
-    if entrada == 1:
+    print (entrada)
+    if entrada == '1':
         num_c = num
-    elif entrada == 2:
+    elif entrada == '2':
         num_c = cm_metros(num)
-    elif entrada == 3:
+    elif entrada == '3':
         num_c = nm_metros(num)
-    elif entrada == 4:
+    elif entrada == '4':
         num_c = km_metros(num)
-    elif entrada == 5:
+    elif entrada == '5':
         num_c = mm_metros(num)
-    elif entrada == 6:
+    elif entrada == '6':
         num_c = um_metros(num)
-    elif entrada == 7:
+    elif entrada == '7':
         num_c = pm_metros(num)
-    else:
-        print('Opção inválida. Escolha uma opção válida.')
+
+    print (num_c)
+    
+    if entrada == '1':
+        a = 'm'
+    elif entrada == '2':
+        a = 'cm'
+    elif entrada == '3':
+        a = 'nm'
+    elif entrada == '4':
+        a = 'km'
+    elif entrada == '5':
+        a = 'mm'
+    elif entrada == '6':
+        a = 'um'
+    elif entrada == '7':
+        a = 'pm'
 
     print('Digite a unidade de medida desejada: ')
+    #
     print('1 - m')
+    #
     print('2 - cm')
+    # Correto
     print('3 - nm')
+    #
     print('4 - km')
+    #
     print('5 - mm')
+    #
     print('6 - um')
+    #
     print('7 - pm')
     saida = input('Escolha uma opção: ')
-    if saida == 1:
+    if saida == '1':
         num_c2 = num_c
-    elif saida == 2:
+    elif saida == '2':
         num_c2 = metros_cm(num_c)
-    elif saida == 3:
+    elif saida == '3':
         num_c2 = metros_nm(num_c)
-    elif saida == 4:
+    elif saida == '4':
         num_c2 = metros_km(num_c)
-    elif saida == 5:
+    elif saida == '5':
         num_c2 = metros_mm(num_c)
-    elif saida == 6:
+    elif saida == '6':
         num_c2 = metros_um(num_c)
-    elif saida == 7:
+    elif saida == '7':
         num_c2 = metros_pm(num_c)
     else:
         print('Opção inválida. Escolha uma opção válida.')
+    
+    if saida == '1':
+        b = 'm'
+    elif saida == '2':
+        b = 'cm'
+    elif saida == '3':
+        b = 'nm'
+    elif saida == '4':
+        b = 'km'
+    elif saida == '5':
+        b = 'mm'
+    elif saida == '6':
+        b = 'um'
+    elif saida == '7':
+        b = 'pm'
 
+    print(f'Entrada: {num} {a}')
+    print(f'Saída: {num_c2} {b}')
+    # Precisa de unidades de
 
 # Opções do menu de cálculos
 
@@ -596,12 +648,11 @@ def menu_conversores():
 
     elif option == '0':
         clear_screen()
-        return
+        input('Pressione Enter para continuar...')
+
     else:
         print('Opção inválida. Escolha uma opção válida.')
 
-    input('Pressione Enter para continuar...')
-    menu()
 
 # Função para o menu de equações
 def menu():
@@ -662,7 +713,8 @@ def menu():
 
     elif option == '0':
         clear_screen()
-        return
+        input('Pressione Enter para continuar...')
+        menu()
     else:
         print('Opção inválida. Escolha uma opção válida.')
 
@@ -697,7 +749,7 @@ while True:
     elif option == '2':
         print('Redirecionando para o menu de conversores...')
         menu_conversores()
-        
+
     elif option == '3':
         print('Limpando variáveis...')
         limpar_variaveis()
