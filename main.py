@@ -30,6 +30,9 @@ K = Decimal (0) # Energia cinética
 U = Decimal (0) # Energia potencial
 E = Decimal (0) # Energia total
 lE = Decimal (0) # Comprimento de onda do elétron
+E_foton=Decimal(0)
+Freq_foton=Decimal(0)
+Lamb_foton=Decimal(0)
 
 num = Decimal(0) # Número 
 num_c = Decimal(0) # Número convertido 1
@@ -174,6 +177,18 @@ def J_eV(num):
 def eV_cal(num):
     num_c = num * 2.3900573613767 * (10 ** 20)
     return num_c
+
+def E_foton_calc(ni,nf):
+    ei=(-13.6/ni**2)
+    ef=(-13.6/nf**2)
+    E_foton=ef-ei
+    return E_foton
+def lamb_foton_calc(E_foton):
+    Lamb_foton=hev*c/E_foton
+    return Lamb_foton
+def Freq_foton_calc(E_foton):
+    Freq_foton=E_foton/hev
+    return Freq_foton
 
 
 # Opções do menu de conversores imbutido
@@ -461,17 +476,18 @@ def opcao1():
 
 # Entrada: n inicial e final ; Saida: eF, f e lF.
 def opcao2():
-    global n, eF, f, lF, r, v, K, U, E, lE
+    global n, eF, f, lF, r, v, K, U, E, lE,E_foton,Freq_foton,Lamb_foton
     print('Digite o número quântico inicial (ni): ')
-    ni = Decimal(input())
+    ni = int(input())
     print('Digite o número quântico final (nf): ')
-    nf = Decimal(input())
-    eF = Decimal(13.6 * ((1 / (ni ** 2)) - (1 / (nf ** 2))))
-    f = Decimal(eF / h)
-    lF = Decimal(3 * (10 ** 8) / f)
-    print('Energia do fóton (eF):', eF, 'eV')
-    print('Frequência do fóton (f):', f, 'Hz')
-    print('Comprimento de onda (lambda) do Fóton (lF):', lF, 'm')
+    nf = int(input())
+    E_foton_calc(ni,nf)
+    lamb_foton_calc(E_foton)
+    Freq_foton_calc(E_foton)
+    
+    print('Energia do fóton (eF):', E_foton, 'eV')
+    print('Frequência do fóton (f):', Freq_foton, 'Hz')
+    print('Comprimento de onda (lambda) do Fóton (lF):', Lamb_foton, 'm')
 
 
 # Entrada: n inicial ou final + f ou lF (absorvido) ; Saida: n final ou n inicial.
@@ -480,8 +496,7 @@ def opcao3():
     global n, eF, f, lF, r, v, K, U, E, lE
     print('Opções de entradas:')
     # Retorna n final
-    print("quando ele é emitido use o n que ele da: ")
-    print("quando ele absorve use o n que ele deseja:")
+    print("selecione o n que o exercicio oferece e a lambida/frequencia(emitido): ")
     print('1 - n final + f') 
     print('2 - n final + lF ')
     # Retorna n inicial
@@ -529,40 +544,46 @@ def opcao3():
 def opcao4():
     # Mostrar a resposta de duas formas: número com duas casas decimais e em forma de número inteiro
     global n, eF, f, lF, r, v, K, U, E, lE
-    print('Opções de entradas:')
-    print('1 - n inicial + f')
-    print('2 - n inicial + lF (emitido)')
-    print('3 - n final + f')
-    print('4 - n final + lF (emitido)')
+    print("selecione o n que a questão deseja achar (absorve)")
+    print('1 - n final + f') 
+    print('2 - n final + lF ')
+    # Retorna n inicial
+    print('3 - n inicial + f')
+    print('4 - n inicial + lF')
     option = input('Escolha uma opção: ')
 
     if option == '1':
         print('Opção 1 selecionada...')
-        ni = Decimal(input('Digite o número quântico inicial (ni): '))
-        f = Decimal(input('Digite a frequência (f) em Hz: '))
-        nf = Decimal(ni + 1)
-        print('Número quântico final (nf):', nf)
+        n = float(input('Digite o número quântico final (n)(): '))
+        freq_foton = float(input('Digite a frequência (f) em Hz: '))
+        Ei = -13.6/n ** 2 + hev * freq_foton
+        print(f"Ei: {Ei:.3f} eV")
+        nf = round((-13.6/Ei) ** 0.5)
+        print('Número quântico inicial (nf):', nf)
     elif option == '2':
         print('Opção 2 selecionada...')
-        ni = Decimal(input('Digite o número quântico inicial (ni): '))
-        lF = Decimal(input('Digite o comprimento de onda (lambda) do Fóton (lF) em m: '))
-        nf = Decimal(ni + 1)
-        print('Número quântico final (nf):', nf)
+        n = float(input('Digite o número quântico final (n): '))
+        lamb_foton = float(input("Digite o comprimento de onda do fóton em m: "))
+        Ei = (-13.6/n ** 2) + ((hev*c) / lamb_foton)
+        print(f"Ei: {Ei:.3f} eV")
+        nf = round((-13.6/Ei) ** 0.5)                        
+        print('Número quântico inicial (nf):', nf)
     elif option == '3':
         print('Opção 3 selecionada...')
-        nf = Decimal(input('Digite o número quântico final (nf): '))
-        f = Decimal(input('Digite a frequência (f) em Hz: '))
-        ni = Decimal(nf - 1)
-        print('Número quântico inicial (ni):', ni)
+        nf = float(input('Digite o número quântico inicial (nf): '))
+        freq_foton = float(input("Digite a frequência do fóton em Hz: "))
+        Ef = -13.6/nf ** 2 - hev * freq_foton
+        print(f"Ef: {Ef:.3f} eV")
+        ni = round((-13.6/Ef) ** 0.5)
+        print('Número quântico final (ni):', ni)
     elif option == '4':
         print('Opção 4 selecionada...')
-        nf = Decimal(input('Digite o número quântico final (nf): '))
-        lF = Decimal(input('Digite o comprimento de onda (lambda) do Fóton (lF) em m: '))
-        ni = Decimal(nf - 1)
+        nf = float(input('Digite o número quântico final (nf): '))
+        lamb_foton = float(input("Digite o comprimento de onda do fóton em m: "))
+        Ef = (-13.6/nf ** 2) - ((hev*c) / lamb_foton)
+        print(f"Ef: {Ef:.3f} eV")
+        ni = round((-13.6/Ef) ** 0.5)                        
         print('Número quântico inicial (ni):', ni)
-    else:
-        print('Opção inválida. Escolha uma opção válida.')
-
     input('Pressione Enter para continuar...')
     menu()
 
@@ -679,10 +700,10 @@ def menu():
     print('2 - n inicial e final:')
     print('Retorna eF, f e lF.')
     # 
-    print('3 - n inicial ou final + f ou lF (absorvido):')
+    print('3 - n inicial ou final + f ou lF (emitido):')
     print('Retorna n final ou n inicial.')
     # 
-    print('4 - n inicial ou final + f ou lF (emitido):')
+    print('4 - n inicial ou final + f ou lF (absorvido):')
     print('Retorna n final ou n inicial.')
     # 
     print('5 - f ou lF:')
