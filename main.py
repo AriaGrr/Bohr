@@ -1,3 +1,4 @@
+
 # Turma 725, Equipe 1:
 # Marjorie Luize Martins Costa, RA: 24223084-5
 # Paulo Andre de Oliveira Hirata, RA: 24.123.086-1
@@ -30,9 +31,7 @@ K = Decimal (0) # Energia cinética
 U = Decimal (0) # Energia potencial
 E = Decimal (0) # Energia total
 lE = Decimal (0) # Comprimento de onda do elétron
-E_foton=Decimal(0)
-Freq_foton=Decimal(0)
-Lamb_foton=Decimal(0)
+
 
 num = Decimal(0) # Número 
 num_c = Decimal(0) # Número convertido 1
@@ -178,17 +177,9 @@ def eV_cal(num):
     num_c = num * 2.3900573613767 * (10 ** 20)
     return num_c
 
-def E_foton_calc(ni,nf):
-    ei=(-13.6/ni**2)
-    ef=(-13.6/nf**2)
-    E_foton=ef-ei
-    return E_foton
-def lamb_foton_calc(E_foton):
-    Lamb_foton=hev*c/E_foton
-    return Lamb_foton
-def Freq_foton_calc(E_foton):
-    Freq_foton=E_foton/hev
-    return Freq_foton
+
+
+
 
 
 # Opções do menu de conversores imbutido
@@ -476,18 +467,23 @@ def opcao1():
 
 # Entrada: n inicial e final ; Saida: eF, f e lF.
 def opcao2():
-    global n, eF, f, lF, r, v, K, U, E, lE,E_foton,Freq_foton,Lamb_foton
-    print('Digite o número quântico inicial (ni): ')
-    ni = int(input())
-    print('Digite o número quântico final (nf): ')
-    nf = int(input())
-    E_foton_calc(ni,nf)
-    lamb_foton_calc(E_foton)
-    Freq_foton_calc(E_foton)
+    global n, eF, f, lF, r, v, K, U, E, lE
     
-    print('Energia do fóton (eF):', E_foton, 'eV')
-    print('Frequência do fóton (f):', Freq_foton, 'Hz')
-    print('Comprimento de onda (lambda) do Fóton (lF):', Lamb_foton, 'm')
+    ni = int(input('Digite o número quântico inicial (ni): '))
+    nf = int(input('Digite o número quântico final (nf): '))
+    ei=(-13.6/ni**2)   
+    ef=(-13.6/nf**2)  
+    E_foton=ef-ei
+    Lamb_foton=hev*c/E_foton
+    Freq_foton=E_foton/hev
+    
+    eF = E_foton
+    f = Freq_foton
+    lF = Lamb_foton
+    
+    print('Energia do fóton (eF):', eF, 'eV')
+    print('Frequência do fóton (f):', f, 'Hz')
+    print('Comprimento de onda (lambda) do Fóton (lF):', lF, 'm')
 
 
 # Entrada: n inicial ou final + f ou lF (absorvido) ; Saida: n final ou n inicial.
@@ -690,8 +686,7 @@ def menu():
   print('1 - Dados n: Calcular r, v, lE, K, U, E')
   print('2 - Dados n inicial e n final: Calcular eF, f e lF')
   print('3 - Dados n inicial/final e f/lF (emitido): Calcular n final/inicial')
-  print(
-      '4 - Dados n inicial/final e f/lF (absorvido): Calcular n final/inicial')
+  print('4 - Dados n inicial/final e f/lF (absorvido): Calcular n final/inicial')
   print('5 - Calcular energia ou f/lF do fóton dado f/lF ou energia')
   print('0 - Voltar/Sair')
 
