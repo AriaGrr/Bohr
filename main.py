@@ -587,52 +587,46 @@ def opcao4():
     input('Pressione Enter para continuar...')
     menu()
 
-# Entrada: f ou lF; Saida: E.
-def opcao5():
-    # Retorna E em [J] e [eV].
-    global n, eF, f, lF, r, v, K, U, E, lE
-    print('Opções de entradas:')
-    print('1 - Frequência (f)')
-    print('2 - Comprimento de onda (lambda) do Fóton (lF)')
-    option = input('Escolha uma opção: ')
+# Função opcao_5: Trata tanto a conversão de f ou lambda para E, quanto de E para f e lambda
+def opcao_5():
+  global E_foton, Freq_foton, Lamb_foton
+  print("Escolha o tipo de cálculo:")
+  print(
+      "1 - Dada a frequência (f) ou comprimento de onda (λ) do fóton, calcular a energia (E) do fóton."
+  )
+  print(
+      "2 - Dada a energia (E) do fóton, calcular a frequência (f) e o comprimento de onda (λ) do fóton."
+  )
+  escolha = input("Digite sua opção (1 ou 2): ")
 
-    if option == '1':
-        print('Opção 1 selecionada...')
-        # Corrigir a entrada
-        f = Decimal(input('Digite a frequência (f) em Hz: '))
-        lF = Decimal(3 * (10 ** 8) / f)
-        E = Decimal(6.62607015 * (10 ** -34) * f)
-        print('Comprimento de onda (lambda) do Fóton (lF):', lF, 'm')
-        print('Energia do fóton (E):', E, 'J')
-    elif option == '2':
-        print('Opção 2 selecionada...')
-        lF = Decimal(input('Digite o comprimento de onda (lambda) do Fóton (lF) em m: '))
-        f = Decimal(3 * (10 ** 8) / lF)
-        E = Decimal(6.62607015 * (10 ** -34) * f)
-        print('Frequência (f):', f, 'Hz')
-        print('Energia do fóton (E):', E, 'J')
+  if escolha == '1':
+    sub_escolha = input(
+        "Digite 'f' para frequência ou 'lambda' para comprimento de onda: ")
+    if sub_escolha == 'f':
+      Freq_foton = float(input("Digite a frequência do fóton em Hz: "))
+      E_foton = h * Freq_foton  # E = hf
+    elif sub_escolha == 'lambda':
+      Lamb_foton = float(
+          input("Digite o comprimento de onda do fóton em metros: "))
+      E_foton = (h * c) / Lamb_foton  # E = hc/λ
     else:
-        print('Opção inválida. Escolha uma opção válida.')
+      print("Opção inválida.")
+      return
+    # Mostra os resultados em Joules e em eV
+    E_foton_eV = E_foton / eV_J(1)
+    print(f"Energia do fóton: {E_foton:.3e} J ou {E_foton_eV:.3e} eV")
 
-    input('Pressione Enter para continuar...')
-    menu()
+  elif escolha == '2':
+    E_foton = float(input("Digite a energia do fóton em elétron-volts (eV): "))
+    Freq_foton = E_foton / hev  # f = E/h, novamente usando hev
+    Lamb_foton = (hev * c) / E_foton  # λ = c/f, calculando diretamente em eV
+    print(f"Frequência do fóton: {Freq_foton:.3e} Hz")
+    print(f"Comprimento de onda do fóton: {Lamb_foton:.3e} m")
+
+  else:
+    print("Opção inválida.")
 
 
-
-# Entrada: E ; Saida: f e lF.
-def opcao6():
-    # Entrada E em [J] ou [eV].
-    global n, eF, f, lF, r, v, K, U, E, lE
-    print('Digite a energia do fóton (E) em J: ')
-    E = Decimal(input())
-    f = Decimal(E / 6.62607015 * (10 ** -34))
-    lF = Decimal(3 * (10 ** 8) / f)
-    print('Frequência do fóton (f):', f, 'Hz')
-    print('Comprimento de onda (lambda) do Fóton (lF):', lF, 'm')
-    
-    input('Pressione Enter para continuar...')
-    menu()
-    
 # Menus 
 
 # Função para o menu de conversores
@@ -688,72 +682,39 @@ def menu_conversores():
         print('Opção inválida. Escolha uma opção válida.')
 
 
-# Função para o menu de equações
+# Function to call the menu
 def menu():
-    global n, eF, f, lF, r, v, K, U, E, lE
+  global n, eF, f, lF, r, v, K, U, E, lE
+  clear_screen()
+  print('Opções de cálculo:')
+  print('1 - Dados n: Calcular r, v, lE, K, U, E')
+  print('2 - Dados n inicial e n final: Calcular eF, f e lF')
+  print('3 - Dados n inicial/final e f/lF (emitido): Calcular n final/inicial')
+  print(
+      '4 - Dados n inicial/final e f/lF (absorvido): Calcular n final/inicial')
+  print('5 - Calcular energia ou f/lF do fóton dado f/lF ou energia')
+  print('0 - Voltar/Sair')
+
+  option = input('Escolha uma opção: ')
+
+  if option == '1':
+    opcao1()
+  elif option == '2':
+    opcao2()
+  elif option == '3':
+    opcao3()
+  elif option == '4':
+    opcao4()
+  elif option == '5':
+    opcao_5()
+  elif option == '0':
     clear_screen()
-    print('Opções de entradas:')
-    # Correta
-    print('1 - n:')
-    print('Retorna r, v, lE, K, U, E.')
-    # 
-    print('2 - n inicial e final:')
-    print('Retorna eF, f e lF.')
-    # 
-    print('3 - n inicial ou final + f ou lF (emitido):')
-    print('Retorna n final ou n inicial.')
-    # 
-    print('4 - n inicial ou final + f ou lF (absorvido):')
-    print('Retorna n final ou n inicial.')
-    # 
-    print('5 - f ou lF:')
-    print('Retorna E.')
-    # 
-    print('6 - E:')
-    print('Retorna f e lF.')
+    return
+  else:
+    print("Opção inválida. Por favor, escolha uma opção válida.")
 
-    print('0 - Voltar!')
-    option = input('Escolha uma opção: ')
-
-    if option == '1':
-        print('Opção 1 selecionada...')
-        opcao1()
-        limpar_variaveis()
-
-    elif option == '2':
-        print('Opção 2 selecionada...')
-        opcao2()
-        limpar_variaveis()
-
-    elif option == '3':
-        print('Opção 3 selecionada...')
-        opcao3()
-        limpar_variaveis()
-
-    elif option == '4':
-        print('Opção 4 selecionada...')
-        opcao4()
-        limpar_variaveis()
-
-    elif option == '5':
-        print('Opção 5 selecionada...')
-        opcao5()
-        limpar_variaveis()
-
-    elif option == '6':
-        print('Opção 6 selecionada...')
-        opcao6()
-        limpar_variaveis()
-
-    elif option == '0':
-        clear_screen()
-        input('Pressione Enter para continuar...')
-        menu()
-    else:
-        print('Opção inválida. Escolha uma opção válida.')
-
-    input('Pressione Enter para continuar...')
-    menu()
+  input('Pressione Enter para continuar...')
+  menu()
 
 # Menu principal
 while True:
