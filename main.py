@@ -468,23 +468,9 @@ def opcao1():
 # Entrada: n inicial e final ; Saida: eF, f e lF.
 def opcao2():
     global n, eF, f, lF, r, v, K, U, E, lE
-    #nmenor = int(input('Digite o número quântico menor (nmenor): '))
-    #nmaior = int(input('Digite o número quântico maior (nmaior): '))
-    #ei=(-13.6/nmenor**2)   
-    #ef=(-13.6/nmaior**2)  
-    #E_foton=ef-ei
-    #Lamb_foton=hev*c/E_foton
-    #Freq_foton=E_foton/hev
     
-    eF = E_foton
-    f = Freq_foton
-    lF = Lamb_foton
-    
-    print('Energia do fóton (eF):', eF, 'eV')
-    print('Frequência do fóton (f):', f, 'Hz')
-    print('Comprimento de onda (lambda) do Fóton (lF):', lF, 'm')
-    ni = int(input('Digite o número quântico menor (ni): '))
-    nf = int(input('Digite o número quântico maior (nf): '))
+    ni = int(input('Digite o número quântico inicial (ni): '))
+    nf = int(input('Digite o número quântico final (nf): '))
     ei=(-13.6/ni**2)   
     ef=(-13.6/nf**2)  
     E_foton=ef-ei
@@ -555,10 +541,10 @@ def opcao4():
     # Mostrar a resposta de duas formas: número com duas casas decimais e em forma de número inteiro
     global n, eF, f, lF, r, v, K, U, E, lE
     print("selecione o n que a questão deseja achar (absorve)")
-    print('1 - achar o n final usando  f') 
-    print('2 - achar o n final usando  lF ')
+    print('1 - achar o n final usando f') 
+    print('2 - achar o n final usando lF ')
     # Retorna n inicial
-    print('3 - achar o n inicial usando  f')
+    print('3 - achar n inicial usando f')
     print('4 - achar o n inicial usando lF')
     option = input('Escolha uma opção: ')
 
