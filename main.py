@@ -693,22 +693,20 @@ while True:
         print('Desenvolvedores: Marjorie Luize Martins Costa, Paulo Andre de Oliveira Hirata, Diogo Santos Linna, Victor Merker Binda')
         print(" ")
         print('O programa "Átomo de Bohr" simula o comportamento de elétrons em átomos de Bohr, permitindo calcular diversas propriedades físicas como velocidade do elétron, energia do fóton, raio da órbita, energia cinética, potencial e total. O programa se baseia no modelo de átomo de Bohr, que descreve o átomo como um sistema de elétrons que orbitam um núcleo atômico. O modelo assume que os elétrons só podem se mover em órbitas circulares com raios específicos e quantizados. A energia de cada órbita é também quantizada, o que significa que os elétrons só podem ter certos valores de energia.')
-        #Dizer caso queiram alguma modificação no texto.
+
         print(" ")
         print('Funcionalidades:')
         print(" ")
         print('- Cálculo de diversas propriedades físicas do átomo de Bohr')
-        print(" ")
         print('- Conversão de unidades')
-        print(" ")
         print('- Interface amigável e fácil de usar')
         print(" ")
         print('Limitações:')
         print(" ")
         print('- O modelo de Bohr é um modelo simplificado e não leva em consideração todos os aspectos da estrutura atômica.')
-        print(" ")
         print('- O programa pode apresentar resultados imprecisos para alguns átomos e para alguns cálculos.:')
-        # Opinar e se necessario modificar a descrição
+        print(" ")
+
         print('Pressione Enter para continuar...')
         input() 
         teste = Decimal(1)
