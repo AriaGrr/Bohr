@@ -473,8 +473,8 @@ def opcao2():
     ei=(-13.6/ni**2)   
     ef=(-13.6/nf**2)  
     eF=ef-ei
-    lF=hev*c/E_foton
-    f=E_foton/hev
+    lF=hev*c/eF
+    f=eF/hev
     
     print('Energia do fóton (eF):', eF, 'eV')
     print('Frequência do fóton (f):', f, 'Hz')
@@ -661,7 +661,7 @@ def menu():
   print('Saida: n final ou inicial')
   print('5 - Entrada energia do foton (em eV ou J) ou f/lF')
   print('Saida: f/lF ou energia (em eV e em J)')
-  print('0 - Voltar/Sair')
+  print('0 - Voltar')
 
   option = input('Escolha uma opção: ')
 
@@ -701,7 +701,7 @@ while True:
         print(" ")
         print('- Conversão de unidades')
         print(" ")
-        print('-I nterface amigável e fácil de usar')
+        print('- Interface amigável e fácil de usar')
         print(" ")
         print('Limitações:')
         print(" ")
