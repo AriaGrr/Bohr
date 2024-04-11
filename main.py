@@ -582,7 +582,6 @@ def opcao1():
     print(f'Comprimento de onda do elétron (lE): {lE:.4g} m')
     input('Pressione Enter para continuar...')
     limpar_variaveis()
-    menu()
 
         
 
@@ -602,10 +601,10 @@ def opcao2():
     print('Energia do fóton (eF):', eF, 'eV')
     print('Frequência do fóton (f):', f, 'Hz')
     print('Comprimento de onda (lambda) do Fóton (lF):', lF, 'm')
+    limpar_variaveis()
 
 
 # Entrada: n inicial ou final + f ou lF (absorvido) ; Saida: n final ou n inicial.
-def opcao3():
 def opcao3():
     # Mostrar a resposta de duas formas: número com duas casas decimais e em forma de número inteiro
     global n, eF, f, lF, r, v, K, U, E, lE
@@ -651,6 +650,7 @@ def opcao3():
         print(f"Ef: {Ef:.3f} eV")
         nf = round((-13.6/Ef) ** 0.5)                        
         print('Número quântico inicial (nf):', nf)
+    limpar_variaveis()
     
 
 # Entrada: n inicial ou final + f ou lF (emitido) ; Saida: n final ou n inicial.
@@ -697,7 +697,9 @@ def opcao4():
         print(f"Ef: {Ef:.3f} eV")
         ni = round((-13.6/Ef) ** 0.5)                        
         print('Número quântico inicial (ni):', ni)
+
     input('Pressione Enter para continuar...')
+    limpar_variaveis()
     menu()
 
 # Função opcao_5: Trata tanto a conversão de f ou lambda para E, quanto de E para f e lambda
@@ -727,6 +729,7 @@ def opcao5():
     # Mostra os resultados em Joules e em eV
     E_foton_eV = E_foton / eV_J(1)
     print(f"Energia do fóton: {E_foton:.3e} J ou {E_foton_eV:.3e} eV")
+    limpar_variaveis()
 
   elif escolha == '2':
     E_foton = float(input("Digite a energia do fóton em elétron-volts (eV): "))
@@ -734,9 +737,11 @@ def opcao5():
     Lamb_foton = (hev * c) / E_foton  # λ = c/f, calculando diretamente em eV
     print(f"Frequência do fóton: {Freq_foton:.3e} Hz")
     print(f"Comprimento de onda do fóton: {Lamb_foton:.3e} m")
-
+    limpar_variaveis()
   else:
     print("Opção inválida.")
+    limpar_variaveis()
+
 
 # Menus 
 
