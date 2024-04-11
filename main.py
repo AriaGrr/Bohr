@@ -770,7 +770,6 @@ def menu_conversores():
 
     elif option == '0':
         clear_screen()
-        input('Pressione Enter para continuar...')
 
     else:
         print('Opção inválida. Escolha uma opção válida.')
@@ -811,7 +810,6 @@ def menu():
   else:
     print("Opção inválida. Por favor, escolha uma opção válida.")
 
-  input('Pressione Enter para continuar...')
   menu()
 
 # Menu principal
