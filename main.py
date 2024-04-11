@@ -452,15 +452,12 @@ def opcao1():
     print('Entrada:')
     print(f'Número quântico (n): {n}')
     print('Saída:')
-    print(f'1 - Raio da órbita (r): {r:.4g} m')
-    print(f'2 - Velocidade (v): {v:.4g} m/s')
-    print(f'3 - Energia cinética (K): {K:.4g} eV')
-    print(f'4 - Energia potencial (U): {U:.4g} eV')
-    print(f'5 - Energia total (E): {E:.4g} eV')
-    print(f'6 - Comprimento de onda do elétron (lE): {lE:.4g} m')
-
-    # conversores(1)
-    
+    print(f'Raio da órbita (r): {r:.4g} m')
+    print(f'Velocidade (v): {v:.4g} m/s')
+    print(f'Energia cinética (K): {K:.4g} eV')
+    print(f'Energia potencial (U): {U:.4g} eV')
+    print(f'Energia total (E): {E:.4g} eV')
+    print(f'Comprimento de onda do elétron (lE): {lE:.4g} m')
     input('Pressione Enter para continuar...')
     limpar_variaveis()
     menu()
@@ -475,13 +472,9 @@ def opcao2():
     nf = int(input('Digite o número quântico final (nf): '))
     ei=(-13.6/ni**2)   
     ef=(-13.6/nf**2)  
-    E_foton=ef-ei
-    Lamb_foton=hev*c/E_foton
-    Freq_foton=E_foton/hev
-    
-    eF = E_foton
-    f = Freq_foton
-    lF = Lamb_foton
+    eF=ef-ei
+    lF=hev*c/E_foton
+    f=E_foton/hev
     
     print('Energia do fóton (eF):', eF, 'eV')
     print('Frequência do fóton (f):', f, 'Hz')
@@ -494,7 +487,7 @@ def opcao3():
     global n, eF, f, lF, r, v, K, U, E, lE
     print('Opções de entradas:')
     # Retorna n final
-    print("selecione o n que o exercicio oferece e a lambida/frequencia(emitido): ")
+    print("Selecione o n que o exercicio oferece e a lambda/frequencia(emitido): ")
     print('1 - n final + f') 
     print('2 - n final + lF ')
     # Retorna n inicial
@@ -504,17 +497,17 @@ def opcao3():
 
     if option == '1':
         print('Opção 1 selecionada...')
-        nf = float(input('Digite o número quântico final (nf)(): '))
-        freq_foton = float(input('Digite a frequência (f) em Hz: '))
-        Ei = -13.6/nf ** 2 + hev * freq_foton
+        nf = float(input('Digite o número quântico final (nf): '))
+        f = float(input('Digite a frequência (f) em Hz: '))
+        Ei = -13.6/nf ** 2 + hev * f
         print(f"Ei: {Ei:.3f} eV")
         ni = round((-13.6/Ei) ** 0.5)
         print('Número quântico inicial (ni):', ni)
     elif option == '2':
         print('Opção 2 selecionada...')
         nf = float(input('Digite o número quântico final (nf): '))
-        lamb_foton = float(input("Digite o comprimento de onda do fóton em m: "))
-        Ei = (-13.6/nf ** 2) + ((hev*c) / lamb_foton)
+        lF = float(input("Digite o comprimento de onda do fóton em m: "))
+        Ei = (-13.6/nf ** 2) + ((hev*c) / lF)
         print(f"Ei: {Ei:.3f} eV")
         ni = round((-13.6/Ei) ** 0.5)                        
         print('Número quântico inicial (ni):', ni)
@@ -528,15 +521,12 @@ def opcao3():
         print('Número quântico final (nf):', nf)
     elif option == '4':
         print('Opção 4 selecionada...')
-        ni = float(input('Digite o número quântico final (ni): '))
-        lamb_foton = float(input("Digite o comprimento de onda do fóton em m: "))
-        Ef = (-13.6/ni ** 2) - ((hev*c) / lamb_foton)
+        ni = float(input('Digite o número quântico inicial (ni): '))
+        lF = float(input("Digite o comprimento de onda do fóton em m: "))
+        Ef = (-13.6/ni ** 2) - ((hev*c) / lF)
         print(f"Ef: {Ef:.3f} eV")
         nf = round((-13.6/Ef) ** 0.5)                        
-        print('Número quântico inicial (nf):', nf)
-    
-        
-
+        print('Número quântico final (nf):', nf)
 
 # Entrada: n inicial ou final + f ou lF (emitido) ; Saida: n final ou n inicial.
 def opcao4():
@@ -552,7 +542,7 @@ def opcao4():
 
     if option == '1':
         print('Opção 1 selecionada...')
-        n = float(input('Digite o número quântico final (n)(): '))
+        n = float(input('Digite o número quântico final (n): '))
         freq_foton = float(input('Digite a frequência (f) em Hz: '))
         Ei = -13.6/n ** 2 + hev * freq_foton
         print(f"Ei: {Ei:.3f} eV")
@@ -661,11 +651,16 @@ def menu():
   global n, eF, f, lF, r, v, K, U, E, lE
   clear_screen()
   print('Opções de cálculo:')
-  print('1 - Dados n: Calcula r, v, lE, K, U, E')
-  print('2 - Dados n inicial e n final: Calcula eF, f e lF')
-  print('3 - Dados n inicial/final e f/lF (emitido): Calcula n final/inicial')
-  print('4 - Dados n inicial/final e f/lF (absorvido): Calcula n final/inicial')
-  print('5 - Calcula energia ou f/lF do fóton dado f/lF ou energia')
+  print('1 - Entrada n:')
+  print('Saida: r, v, lE, K, U, E')
+  print('2 - Entrada n inicial e n final')
+  print('Saida: eF, f, lF')
+  print('3 - Entrada n inicial ou final + f ou lF (emitido)')
+  print('Saida: n final ou inicial')
+  print('4 - Entrada n inicial ou final + f ou lF (absorvido)')
+  print('Saida: n final ou inicial')
+  print('5 - Entrada energia do foton (em eV ou J) ou f/lF')
+  print('Saida: f/lF ou energia (em eV e em J)')
   print('0 - Voltar/Sair')
 
   option = input('Escolha uma opção: ')
