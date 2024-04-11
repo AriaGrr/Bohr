@@ -699,7 +699,7 @@ def opcao4():
     menu()
 
 # Função opcao_5: Trata tanto a conversão de f ou lambda para E, quanto de E para f e lambda
-def opcao_5():
+def opcao5():
   print("Escolha o tipo de cálculo:")
   print(
       "1 - Dada a frequência (f) ou comprimento de onda (λ) do fóton, calcular a energia (E) do fóton."
@@ -803,7 +803,7 @@ def menu():
   elif option == '4':
     opcao4()
   elif option == '5':
-    opcao_5()
+    opcao5()
   elif option == '0':
     clear_screen()
     return
