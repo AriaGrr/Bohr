@@ -22,15 +22,15 @@ c=3*10**8
 n = Decimal(0) # Número quântico
 ni = Decimal(0) # Número quântico inicial
 nf = Decimal(0) # Número quântico final
-eF = Decimal(0) # Energia do fóton absorvido/emitido (eV)
-f = Decimal(0) # Frequência do fóton absorvido/emitido (Hz)
-lF = Decimal (0) # Comprimento de onda (lambda) do fóton absorvido/emitido (m)
-r = Decimal (0) # Raio da órbita (m)
-v = Decimal (0) # Velocidade (m/s)
-K = Decimal (0) # Energia cinética (eV)
-U = Decimal (0) # Energia potencial (eV)
-E = Decimal (0) # Energia total (eV)
-lE = Decimal (0) # Comprimento de onda do elétron (m)
+eF = Decimal(0) # Energia do fóton absorvido/emitido
+f = Decimal(0) # Frequência do fóton absorvido/emitido
+lF = Decimal (0) # Comprimento de onda (lambda) do fóton absorvido/emitido
+r = Decimal (0) # Raio da órbita
+v = Decimal (0) # Velocidade
+K = Decimal (0) # Energia cinética
+U = Decimal (0) # Energia potencial
+E = Decimal (0) # Energia total
+lE = Decimal (0) # Comprimento de onda do elétron
 
 
 num = Decimal(0) # Número 
@@ -64,97 +64,43 @@ def limpar_variaveis():
 
 # Cálculo do raio da órbita (m)
 def raio_orbita():
+    #r = Decimal((n ** 2) * (h ** 2) / (4 * (math.pi ** 2) * 9.10938356 * (10 ** -31) * (9 * (10 ** 9))))
     r = (n ** 2) * 5.29 * (10 ** -11)
     return r
 
 # Cálculo da velocidade (m/s)
 def velocidade():
+    #v = Decimal(2 * math.pi * (3 * (10 ** 8)) / lE)
     v = 2.187 * (10 ** 6) / n
     return v
 
 # Cálculo do comprimento de onda De Broglie do elétron (m)
 def comprimento_onda_eletron():
+    #lE = Decimal(h / (9.10938356 * (10 ** -31) * v))
+    #lE = Decimal(5,29 * (10 ** -11) / n)
     lE = h / (mE * v)
     return lE
 
 # Cálculo da energia cinética (eV)
 def energia_cinetica():
+    #K = Decimal((1 / 2) * (9.10938356 * (10 ** -31)) * (v ** 2))
     K = +13.6 / n ** 2
     return K
 
 # Cálculo da energia potencial (eV)
 def energia_potencial():
+    #U = Decimal(-1 * (9 * (10 ** 9)) * (1.60217662 * (10 ** -19)) / r)
     U = -27.2 / n ** 2
     return U
 
 # Cálculo da energia total (eV)
 def energia_total():
+    #E = Decimal(K + U)
     E = -13.6 / (n ** 2)
     return E
 
 # Funções para conversões
 # Todos os conversores vão para uma unidade padrão e depois convertem para a unidade desejada
-
-# Conversor de eV -> J
-def eV_J(num):
-    num_c = num * 1.60217662 * (10 ** -19)
-    return num_c
-
-# Conversor de J -> eV
-def J_eV(num):
-    num_c = num / 1.60217662 * (10 ** -19)
-    return num_c
-
-# Conversor de eV -> cal
-def eV_cal(num):
-    num_c = num * 2.3900573613767 * (10 ** 20)
-    return num_c
-
-# Conversor de cal -> eV
-def cal_eV(num):
-    num_c = num / 2.3900573613767 * (10 ** 20)
-    return num_c
-
-# Conversor de eV -> kcal
-def eV_kcal(num):
-    num_c = num * 2.3900573613767 * (10 ** 17)
-    return num_c
-
-# Conversor de kcal -> eV
-def kcal_eV(num):
-    num_c = num / 2.3900573613767 * (10 ** 17)
-    return num_c
-
-# Conversor de eV -> BTU
-def eV_Btu(num):
-    num_c = num * 3.826733324 * (10 ** 19)
-    return num_c
-
-# Conversor de BTU -> eV
-def Btu_eV(num):
-    num_c = num / 3.826733324 * (10 ** 19)
-    return num_c
-
-# Conversor de eV -> kWh
-def eV_kWh(num):
-    num_c = num * 2.7777777777778 * (10 ** -7)
-    return num_c
-
-# Conversor de kWh -> eV
-def kWh_eV(num):
-    num_c = num / 2.7777777777778 * (10 ** -7)
-    return num_c
-
-# Conversor de eV -> Wh
-def eV_Wh(num):
-    num_c = num * 3.6 * (10 ** -6)
-    return num_c
-
-# Conversor de eV -> Wh
-def Wh_eV(num):
-    num_c = num / 3.6 * (10 ** -6)
-    return num_c
-
 
 # Conversor de metros -> nm
 def metros_nm(num):
@@ -216,243 +162,177 @@ def pm_metros(num):
     num_c = num / 1e12
     return num_c
 
-# Conversor de Hz -> kHz
-def Hz_kHz(num):
-    num_c = num / 1e3
+# Conversor de eV -> J
+def eV_J(num):
+    num_c = num * 1.60217662 * (10 ** -19)
     return num_c
 
-# Conversor de kHz -> Hz
-def kHz_Hz(num):
-    num_c = num * 1e3
+# Conversor de J -> eV
+def J_eV(num):
+    num_c = num / 1.60217662 * (10 ** -19)
     return num_c
 
-# Conversor de Hz -> MHz
-def Hz_MHz(num):
-    num_c = num / 1e6
-    return num_c
-
-# Conversor de MHz -> Hz
-def MHz_Hz(num):
-    num_c = num * 1e6
-    return num_c
-
-# Conversor de Hz -> GHz
-def Hz_GHz(num):
-    num_c = num / 1e9
-    return num_c
-
-# Conversor de GHz -> Hz
-def GHz_Hz(num):
-    num_c = num * 1e9
-    return num_c
-
-# Conversor de Hz -> THz
-def Hz_THz(num):
-    num_c = num / 1e12
-    return num_c
-
-# Conversor de THz -> Hz
-def THz_Hz(num):
-    num_c = num * 1e12
+# Conversor de eV -> cal
+def eV_cal(num):
+    num_c = num * 2.3900573613767 * (10 ** 20)
     return num_c
 
 
-def conversor2():
-    global num, num_c, num_c2
-    a = ''
-    b = ''
-    print('Digite a unidade de medida do número da entrada: ')
-    #
-    print('1 - eV')
-    #
-    print('2 - J')
-    #
-    print('3 - cal')
-    #
-    print('4 - kcal')
-    #
-    print('5 - BTU')
-    #
-    print('6 - kWh')
-    #
-    print('7 - Wh')
-    entrada = input('Escolha uma opção: ')
-    print('Digite o número que deseja converter: ')
-    num = float(input())
-
-    if entrada == '1':
-        num_c = num
-    elif entrada == '2':
-        num_c = J_eV(num)
-    elif entrada == '3':
-        num_c = cal_eV(num)
-    elif entrada == '4':
-        num_c = kcal_eV(num)
-    elif entrada == '5':
-        num_c = Btu_eV(num)
-    elif entrada == '6':
-        num_c = kWh_eV(num)
-    elif entrada == '7':
-        num_c = Wh_eV(num)
-
-    # print (num_c)
-
-    if entrada == '1':
-        a = 'eV'
-    elif entrada == '2':
-        a = 'J'
-    elif entrada == '3':
-        a = 'cal'
-    elif entrada == '4':
-        a = 'kcal'
-    elif entrada == '5':
-        a = 'BTU'
-    elif entrada == '6':
-        a = 'kWh'
-    elif entrada == '7':
-        a = 'Wh'
-
-    print('Digite a unidade de medida desejada: ')
-    #
-    print('1 - eV')
-    #
-    print('2 - J')
-    #
-    print('3 - cal')
-    #
-    print('4 - kcal')
-    #
-    print('5 - BTU')
-    #
-    print('6 - kWh')
-    #
-    print('7 - Wh')
-    saida = input('Escolha uma opção: ')
-    if saida == '1':
-        num_c2 = num_c
-    elif saida == '2':
-        num_c2 = eV_J(num_c)
-    elif saida == '3':
-        num_c2 = eV_cal(num_c)
-    elif saida == '4':
-        num_c2 = eV_kcal(num_c)
-    elif saida == '5':
-        num_c2 = eV_Btu(num_c)
-    elif saida == '6':
-        num_c2 = eV_kWh(num_c)
-    elif saida == '7':
-        num_c2 = eV_Wh(num_c)
-    else:
-        print('Opção inválida. Escolha uma opção válida.')
-
-    if saida == '1':
-        b = 'eV'
-    elif saida == '2':
-        b = 'J'
-    elif saida == '3':
-        b = 'cal'
-    elif saida == '4':
-        b = 'kcal'
-    elif saida == '5':
-        b = 'BTU'
-    elif saida == '6':
-        b = 'kWh'
-    elif saida == '7':
-        b = 'Wh'
-
-    print(f'Entrada: {num} {a}')
-    print(f'Saída: {num_c2} {b}')
-
-def conversor3():
-    global num, num_c, num_c2
-    a = ''
-    b = ''
-    print('Digite a unidade de medida do número da entrada: ')
-    # 
-    print('1 - Hz')
-    #
-    print('2 - kHz')
-    #
-    print('3 - MHz')
-    #
-    print('4 - GHz')
-    #
-    print('5 - THz')
-    entrada = input('Escolha uma opção: ')
-    print('Digite o número que deseja converter: ')
-    num = float(input())
-
-    if entrada == '1':
-        num_c = num
-    elif entrada == '2':
-        num_c = kHz_Hz(num)
-    elif entrada == '3':
-        num_c = MHz_Hz(num)
-    elif entrada == '4':
-        num_c = GHz_Hz(num)
-    elif entrada == '5':
-        num_c = THz_Hz(num)
-
-    # print (num_c)
-
-    if entrada == '1':
-        a = 'Hz'
-    elif entrada == '2':
-        a = 'kHz'
-    elif entrada == '3':
-        a = 'MHz'
-    elif entrada == '4':
-        a = 'GHz'
-    elif entrada == '5':
-        a = 'THz'
-
-    print('Digite a unidade de medida desejada: ')
-    #
-    print('1 - Hz')
-    #
-    print('2 - kHz')
-    #
-    print('3 - MHz')
-    #
-    print('4 - GHz')
-    #
-    print('5 - THz')
-    saida = input('Escolha uma opção: ')
-    if saida == '1':
-        num_c2 = num_c
-    elif saida == '2':
-        num_c2 = Hz_kHz(num_c)
-    elif saida == '3':
-        num_c2 = Hz_MHz(num_c)
-    elif saida == '4':
-        num_c2 = Hz_GHz(num_c)
-    elif saida == '5':
-        num_c2 = Hz_THz(num_c)
-    else:
-        print('Opção inválida. Escolha uma opção válida.')
-
-    if saida == '1':
-        b = 'Hz'
-    elif saida == '2':
-        b = 'kHz'
-    elif saida == '3':
-        b = 'MHz'
-    elif saida == '4':
-        b = 'GHz'
-    elif saida == '5':
-        b = 'THz'
-
-    print(f'Entrada: {num} {a}')
-    print(f'Saída: {num_c2} {b}')
 
 
 
+
+# Opções do menu de conversores imbutido
+
+# def conversores2(y):
+#     global num_c, r, v, K, U, E, lE, lF, f, eF, ow, num
+
+#     valor = y
+#     print('Digite a saida desejada: ')
+#     print (y)
+#     if y == r or y == v or y == lE:
+#         print('1 - cm')
+#         print('2 - nm')
+#         print('3 - km')
+#         print('4 - mm')
+#         print('5 - um')
+#         print('6 - pm')
+#         output = input()
+#         if output == '1':
+#             print ('Opção 1 selecionada...')
+#                 # Colocar logicas de conversão
+#         elif output == '2':
+#             print ('Opção 2 selecionada...')
+#             metros_nm(num)
+#             print(f'{num:.4g} m = {num_c:.4g} nm')
+#         elif output == '3':
+#             print ('Opção 3 selecionada...')
+#                 # Colocar logicas de conversão
+#         elif output == '4':
+#             print ('Opção 4 selecionada...')
+#                 # Colocar logicas de conversão
+#         elif output == '5':
+#             print ('Opção 5 selecionada...')
+#                 # Colocar logicas de conversão
+#         elif output == '6':
+#             print ('Opção 6 selecionada...')
+#                 # Colocar logicas de conversão
+#         else:
+#             print('Opção inválida. Escolha uma opção válida.')
+
+#     elif num == K or num == U or num == E:
+#         print('1 - eV')
+#         print('2 - J')
+#         print('3 - cal')
+#         print('4 - kcal')
+#         print('5 - BTU')
+#         print('6 - kWh')
+#         print('7 - Wh')
+
+#         output = input()
+#         if output == '1':
+#             print ('Opção 1 selecionada...')
+#                 # Colocar logicas de conversão
+#         elif output == '2':
+#             print ('Opção 2 selecionada...')
+#                 # Colocar logicas de conversão
+#         elif output == '3':
+#             print ('Opção 3 selecionada...')
+#                 # Colocar logicas de conversão
+#         elif output == '4':
+#             print ('Opção 4 selecionada...')
+#                 # Colocar logicas de conversão
+#         elif output == '5':
+#             print ('Opção 5 selecionada...')
+#                 # Colocar logicas de conversão
+#         elif output == '6':
+#             print ('Opção 6 selecionada...')
+#                 # Colocar logicas de conversão
+#         elif output == '7':
+#             print ('Opção 7 selecionada...')
+#                 # Colocar logicas de conversão
+
+# def conversores(y):
+#     global ow, num, num_c, r, v, K, U, E, lE, lF, f, eF
+
+#     print('Deseja fazer uma conversão? (S/N)')
+#     op = input()
+
+#     if op == 'S' or 's':
+#         ow = 1
+#     if ow == 1:
+#         print('Escolha o valor que deseja converter: ')
+#         x = input()
+#         if y == 1:
+#             if x == 1:
+#                 conversores2(r)
+#                 ow = 0
+#                 conversores(1)
+#             elif x == 2:
+#                 conversores2(v)
+#                 ow = 0
+#                 conversores(1)
+#             elif x == 3:
+#                 conversores2(K)
+#                 ow = 0
+#                 conversores(1)
+#             elif x == 4:
+#                 conversores2(U)
+#                 ow = 0
+#                 conversores(1)
+#             elif x == 5:
+#                 conversores2(E)
+#                 ow = 0
+#                 conversores(1)
+#             elif x == 6:
+#                 conversores2(lE)
+#                 ow = 0
+#                 conversores(1)
+        
+#         else:
+#             print('Opção inválida. Escolha uma opção válida.')
+
+#     else:
+#         input('Pressione Enter para continuar...')
+        
+# def escolhas1():
+#     print('Digite o número da opção que deseja converter: ')
+#     option = input()
+#     if option == '1':
+#         print('Opção 1 selecionada...')
+#         conversores(r)
+
+#     elif option == '2':
+#         print('Opção 2 selecionada...')
+#         conversores(v)
+
+#     elif option == '3':
+#         print('Opção 3 selecionada...')
+#         conversores(K)
+
+#     elif option == '4':
+#         print('Opção 4 selecionada...')
+#         conversores(U)
+
+#     elif option == '5':
+#         print('Opção 5 selecionada...')
+#         conversores(E)
+
+#     elif option == '6':
+#         print('Opção 6 selecionada...')
+#         conversores(lE)
+
+#     else:
+#         print('Opção inválida. Escolha uma opção válida.')
 
 def conversor1():
     global num, num_c, num_c2
     a = ''
     b = ''
-    print('Digite a unidade de medida do número da entrada: ')
+
+    print('Digite o número que deseja converter: ')
+    num = float(input())
+    print('Digite a unidade de medida do número: ')
     # Correto
     print('1 - m')
     #
@@ -468,9 +348,7 @@ def conversor1():
     #
     print('7 - pm')
     entrada = input('Escolha uma opção: ')
-    print('Digite o número que deseja converter: ')
-    num = float(input())
-    #print (entrada)
+    print (entrada)
     if entrada == '1':
         num_c = num
     elif entrada == '2':
@@ -486,7 +364,7 @@ def conversor1():
     elif entrada == '7':
         num_c = pm_metros(num)
 
-    # print (num_c)
+    print (num_c)
     
     if entrada == '1':
         a = 'm'
@@ -555,8 +433,6 @@ def conversor1():
     print(f'Saída: {num_c2} {b}')
     # Precisa de unidades de
 
-
-
 # Opções do menu de cálculos
 
 # Entrada: n ; Saida: r, v, lE, K, U, E.
@@ -574,34 +450,54 @@ def opcao1():
     print('Entrada:')
     print(f'Número quântico (n): {n}')
     print('Saída:')
-    print(f'Raio da órbita (r): {r:.4g} m')
-    print(f'Velocidade (v): {v:.4g} m/s')
-    print(f'Energia cinética (K): {K:.4g} eV')
-    print(f'Energia potencial (U): {U:.4g} eV')
-    print(f'Energia total (E): {E:.4g} eV')
-    print(f'Comprimento de onda do elétron (lE): {lE:.4g} m')
+    print(f'1 - Raio da órbita (r): {r:.4g} m')
+    print(f'2 - Velocidade (v): {v:.4g} m/s')
+    print(f'3 - Energia cinética (K): {K:.4g} eV')
+    print(f'4 - Energia potencial (U): {U:.4g} eV')
+    print(f'5 - Energia total (E): {E:.4g} eV')
+    print(f'6 - Comprimento de onda do elétron (lE): {lE:.4g} m')
+
+    # conversores(1)
+    
     input('Pressione Enter para continuar...')
     limpar_variaveis()
+    menu()
 
         
 
 # Entrada: n inicial e final ; Saida: eF, f e lF.
 def opcao2():
     global n, eF, f, lF, r, v, K, U, E, lE
+    #nmenor = int(input('Digite o número quântico menor (nmenor): '))
+    #nmaior = int(input('Digite o número quântico maior (nmaior): '))
+    #ei=(-13.6/nmenor**2)   
+    #ef=(-13.6/nmaior**2)  
+    #E_foton=ef-ei
+    #Lamb_foton=hev*c/E_foton
+    #Freq_foton=E_foton/hev
     
-    ni = int(input('Digite o número quântico inicial (ni): '))
-    nf = int(input('Digite o número quântico final (nf): '))
-    ei=(-13.6/ni**2)   
-    ef=(-13.6/nf**2)  
-    
-    eF = ef-ei
-    f = eF/hev
-    lF = hev*c/eF
+    eF = E_foton
+    f = Freq_foton
+    lF = Lamb_foton
     
     print('Energia do fóton (eF):', eF, 'eV')
     print('Frequência do fóton (f):', f, 'Hz')
     print('Comprimento de onda (lambda) do Fóton (lF):', lF, 'm')
-    limpar_variaveis()
+    ni = int(input('Digite o número quântico menor (ni): '))
+    nf = int(input('Digite o número quântico maior (nf): '))
+    ei=(-13.6/ni**2)   
+    ef=(-13.6/nf**2)  
+    E_foton=ef-ei
+    Lamb_foton=hev*c/E_foton
+    Freq_foton=E_foton/hev
+    
+    eF = E_foton
+    f = Freq_foton
+    lF = Lamb_foton
+    
+    print('Energia do fóton (eF):', eF, 'eV')
+    print('Frequência do fóton (f):', f, 'Hz')
+    print('Comprimento de onda (lambda) do Fóton (lF):', lF, 'm')
 
 
 # Entrada: n inicial ou final + f ou lF (absorvido) ; Saida: n final ou n inicial.
@@ -650,24 +546,25 @@ def opcao3():
         print(f"Ef: {Ef:.3f} eV")
         nf = round((-13.6/Ef) ** 0.5)                        
         print('Número quântico inicial (nf):', nf)
-    limpar_variaveis()
     
+        
+
 
 # Entrada: n inicial ou final + f ou lF (emitido) ; Saida: n final ou n inicial.
 def opcao4():
     # Mostrar a resposta de duas formas: número com duas casas decimais e em forma de número inteiro
     global n, eF, f, lF, r, v, K, U, E, lE
     print("selecione o n que a questão deseja achar (absorve)")
-    print('1 - n final + f') 
-    print('2 - n final + lF ')
+    print('1 - achar o n final usando  f') 
+    print('2 - achar o n final usando  lF ')
     # Retorna n inicial
-    print('3 - n inicial + f')
-    print('4 - n inicial + lF')
+    print('3 - achar o n inicial usando  f')
+    print('4 - achar o n inicial usando lF')
     option = input('Escolha uma opção: ')
 
     if option == '1':
         print('Opção 1 selecionada...')
-        n = float(input('Digite o número quântico final (n): '))
+        n = float(input('Digite o número quântico final (n)(): '))
         freq_foton = float(input('Digite a frequência (f) em Hz: '))
         Ei = -13.6/n ** 2 + hev * freq_foton
         print(f"Ei: {Ei:.3f} eV")
@@ -697,13 +594,12 @@ def opcao4():
         print(f"Ef: {Ef:.3f} eV")
         ni = round((-13.6/Ef) ** 0.5)                        
         print('Número quântico inicial (ni):', ni)
-
     input('Pressione Enter para continuar...')
-    limpar_variaveis()
     menu()
 
 # Função opcao_5: Trata tanto a conversão de f ou lambda para E, quanto de E para f e lambda
-def opcao5():
+def opcao_5():
+  global E_foton, Freq_foton, Lamb_foton
   print("Escolha o tipo de cálculo:")
   print(
       "1 - Dada a frequência (f) ou comprimento de onda (λ) do fóton, calcular a energia (E) do fóton."
@@ -715,11 +611,11 @@ def opcao5():
 
   if escolha == '1':
     sub_escolha = input(
-        "Digite '1' para frequência ou '2' para comprimento de onda: ")
-    if sub_escolha == '1':
+        "Digite 'f' para frequência ou 'lambda' para comprimento de onda: ")
+    if sub_escolha == 'f':
       Freq_foton = float(input("Digite a frequência do fóton em Hz: "))
       E_foton = h * Freq_foton  # E = hf
-    elif sub_escolha == '2':
+    elif sub_escolha == 'lambda':
       Lamb_foton = float(
           input("Digite o comprimento de onda do fóton em metros: "))
       E_foton = (h * c) / Lamb_foton  # E = hc/λ
@@ -729,7 +625,6 @@ def opcao5():
     # Mostra os resultados em Joules e em eV
     E_foton_eV = E_foton / eV_J(1)
     print(f"Energia do fóton: {E_foton:.3e} J ou {E_foton_eV:.3e} eV")
-    limpar_variaveis()
 
   elif escolha == '2':
     E_foton = float(input("Digite a energia do fóton em elétron-volts (eV): "))
@@ -737,10 +632,9 @@ def opcao5():
     Lamb_foton = (hev * c) / E_foton  # λ = c/f, calculando diretamente em eV
     print(f"Frequência do fóton: {Freq_foton:.3e} Hz")
     print(f"Comprimento de onda do fóton: {Lamb_foton:.3e} m")
-    limpar_variaveis()
+
   else:
     print("Opção inválida.")
-    limpar_variaveis()
 
 
 # Menus 
@@ -754,8 +648,14 @@ def menu_conversores():
     print('1 - m / cm / nm / km / mm / um / pm')
     # 
     print('2 - eV / J / cal / kcal / BTU / kWh / Wh')
-    #
-    print('3 - Hz / kHz / MHz / GHz / THz')
+    # 
+    print('3 - ')
+    # 
+    print('4 - ')
+    # 
+    print('5 - ')
+    # 
+    print('6 - ')
 
     print('0 - Voltar!')
     option = input('Escolha uma opção: ')
@@ -767,16 +667,26 @@ def menu_conversores():
 
     elif option == '2':
         print('Opção 2 selecionada...')
-        conversor2()
-        limpar_variaveis()
+
 
     elif option == '3':
         print('Opção 3 selecionada...')
-        conversor3()
-        limpar_variaveis()
+
+
+    elif option == '4':
+        print('Opção 4 selecionada...')
+
+
+    elif option == '5':
+        print('Opção 5 selecionada...')
+
+
+    elif option == '6':
+        print('Opção 6 selecionada...')
 
     elif option == '0':
         clear_screen()
+        input('Pressione Enter para continuar...')
 
     else:
         print('Opção inválida. Escolha uma opção válida.')
@@ -787,17 +697,12 @@ def menu():
   global n, eF, f, lF, r, v, K, U, E, lE
   clear_screen()
   print('Opções de cálculo:')
-  print('1 - Entrada n:')
-  print('Saida: r, v, lE, K, U, E')
-  print('2 - Entrada n inicial e n final')
-  print('Saida: eF, f, lF')
-  print('3 - Entrada n inicial ou final + f ou lF (emitido)')
-  print('Saida: n final ou inicial')
-  print('4 - Entrada n inicial ou final + f ou lF (absorvido)')
-  print('Saida: n final ou inicial')
-  print('5 - Entrada energia do foton (em eV ou J) ou f/lF')
-  print('Saida: f/lF ou energia (em eV e em J)')
-  print('0 - Voltar')
+  print('1 - Dados n: Calcular r, v, lE, K, U, E')
+  print('2 - Dados n inicial e n final: Calcular eF, f e lF')
+  print('3 - Dados n inicial/final e f/lF (emitido): Calcular n final/inicial')
+  print('4 - Dados n inicial/final e f/lF (absorvido): Calcular n final/inicial')
+  print('5 - Calcular energia ou f/lF do fóton dado f/lF ou energia')
+  print('0 - Voltar/Sair')
 
   option = input('Escolha uma opção: ')
 
@@ -810,13 +715,14 @@ def menu():
   elif option == '4':
     opcao4()
   elif option == '5':
-    opcao5()
+    opcao_5()
   elif option == '0':
     clear_screen()
     return
   else:
     print("Opção inválida. Por favor, escolha uma opção válida.")
 
+  input('Pressione Enter para continuar...')
   menu()
 
 # Menu principal
@@ -826,22 +732,15 @@ while True:
     if teste == Decimal(0):
         print('O átomo de Bohr e quantização com Python')
         print('Desenvolvedores: Marjorie Luize Martins Costa, Paulo Andre de Oliveira Hirata, Diogo Santos Linna, Victor Merker Binda')
-        print(" ")
-        print('O programa "Átomo de Bohr" simula o comportamento de elétrons em átomos de Bohr, permitindo calcular diversas propriedades físicas como velocidade do elétron, energia do fóton, raio da órbita, energia cinética, potencial e total. O programa se baseia no modelo de átomo de Bohr, que descreve o átomo como um sistema de elétrons que orbitam um núcleo atômico. O modelo assume que os elétrons só podem se mover em órbitas circulares com raios específicos e quantizados. A energia de cada órbita é também quantizada, o que significa que os elétrons só podem ter certos valores de energia.')
-
-        print(" ")
+        print('O programa "Átomo de Bohr" simula o comportamento de elétrons em átomos de Bohr, permitindo calcular diversas propriedades físicas como velocidade do elétron, energia do fóton, raio da órbita, energia cinética, potencial e total. O programa se baseia no modelo de átomo de Bohr, que descreve o átomo como um sistema de elétrons que orbitam um núcleo atômico. O modelo assume que os elétrons só podem se mover em órbitas circulares com raios específicos e quantizados. A energia de cada órbita é também quantizada, o que significa que os elétrons só podem ter certos valores de energia.')#Dizer caso queiram alguma modificação no texto.
         print('Funcionalidades:')
-        print(" ")
-        print('- Cálculo de diversas propriedades físicas do átomo de Bohr')
-        print('- Conversão de unidades')
-        print('- Interface amigável e fácil de usar')
-        print(" ")
-        print('Limitações:')
-        print(" ")
-        print('- O modelo de Bohr é um modelo simplificado e não leva em consideração todos os aspectos da estrutura atômica.')
-        print('- O programa pode apresentar resultados imprecisos para alguns átomos e para alguns cálculos.:')
-        print(" ")
-
+        print('/n Cálculo de diversas propriedades físicas do átomo de Bohr')
+        print('/n Conversão de unidades')
+        print('/n Interface amigável e fácil de usar')
+        print('/n Limitações:')
+        print('/n O modelo de Bohr é um modelo simplificado e não leva em consideração todos os aspectos da estrutura atômica.')
+        print('/n O programa pode apresentar resultados imprecisos para alguns átomos e para alguns cálculos.:')
+        # Opinar e se necessario modificar a descrição
         print('Pressione Enter para continuar...')
         input() 
         teste = Decimal(1)
