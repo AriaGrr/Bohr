@@ -248,13 +248,14 @@ def GHz_Hz(num):
 
 # Conversor de Hz -> THz
 def Hz_THz(num):
-    num_c = num * 1e12
+    num_c = num / 1e12
     return num_c
 
 # Conversor de THz -> Hz
 def THz_Hz(num):
-    num_c = num / 1e12
+    num_c = num * 1e12
     return num_c
+    
 
 def conversor2():
     global num, num_c, num_c2
