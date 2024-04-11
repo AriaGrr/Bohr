@@ -216,6 +216,46 @@ def pm_metros(num):
     num_c = num / 1e12
     return num_c
 
+# Conversor de Hz -> kHz
+def Hz_kHz(num):
+    num_c = num / 1e3
+    return num_c
+
+# Conversor de kHz -> Hz
+def kHz_Hz(num):
+    num_c = num * 1e3
+    return num_c
+
+# Conversor de Hz -> MHz
+def Hz_MHz(num):
+    num_c = num / 1e6
+    return num_c
+
+# Conversor de MHz -> Hz
+def MHz_Hz(num):
+    num_c = num * 1e6
+    return num_c
+
+# Conversor de Hz -> GHz
+def Hz_GHz(num):
+    num_c = num / 1e9
+    return num_c
+
+# Conversor de GHz -> Hz
+def GHz_Hz(num):
+    num_c = num * 1e9
+    return num_c
+
+# Conversor de Hz -> THz
+def Hz_THz(num):
+    num_c = num / 1e12
+    return num_c
+
+# Conversor de THz -> Hz
+def THz_Hz(num):
+    num_c = num * 1e12
+    return num_c
+
 def conversor2():
     global num, num_c, num_c2
     a = ''
@@ -318,6 +358,88 @@ def conversor2():
         b = 'kWh'
     elif saida == '7':
         b = 'Wh'
+
+    print(f'Entrada: {num} {a}')
+    print(f'Saída: {num_c2} {b}')
+
+def conversor3():
+    global num, num_c, num_c2
+    a = ''
+    b = ''
+
+    print('Digite o número que deseja converter: ')
+    num = float(input())
+    print('Digite a unidade de medida do número: ')
+    # 
+    print('1 - Hz')
+    #
+    print('2 - kHz')
+    #
+    print('3 - MHz')
+    #
+    print('4 - GHz')
+    #
+    print('5 - THz')
+    entrada = input('Escolha uma opção: ')
+    if entrada == '1':
+        num_c = num
+    elif entrada == '2':
+        num_c = Hz_kHz(num)
+    elif entrada == '3':
+        num_c = Hz_MHz(num)
+    elif entrada == '4':
+        num_c = Hz_GHz(num)
+    elif entrada == '5':
+        num_c = Hz_THz(num)
+
+    # print (num_c)
+
+    if entrada == '1':
+        a = 'Hz'
+    elif entrada == '2':
+        a = 'kHz'
+    elif entrada == '3':
+        a = 'MHz'
+    elif entrada == '4':
+        a = 'GHz'
+    elif entrada == '5':
+        a = 'THz'
+
+    print('Digite a unidade de medida desejada: ')
+    #
+    print('1 - Hz')
+    #
+    print('2 - kHz')
+    #
+    print('3 - MHz')
+    #
+    print('4 - GHz')
+    #
+    print('5 - THz')
+    saida = input('Escolha uma opção: ')
+    if saida == '1':
+        num_c2 = num_c
+    elif saida == '2':
+        num_c2 = kHz_Hz(num_c)
+    elif saida == '3':
+        num_c2 = MHz_Hz(num_c)
+    elif saida == '4':
+        num_c2 = GHz_Hz(num_c)
+    elif saida == '5':
+        num_c2 = THz_Hz(num_c)
+    else:
+        print('Opção inválida. Escolha uma opção válida.')
+
+    if saida == '1':
+        b = 'Hz'
+    elif saida == '2':
+        b = 'kHz'
+    elif saida == '3':
+        b = 'MHz'
+    elif saida == '4':
+        b = 'GHz'
+    elif saida == '5':
+        b = 'THz'
 
     print(f'Entrada: {num} {a}')
     print(f'Saída: {num_c2} {b}')
@@ -624,6 +746,8 @@ def menu_conversores():
     print('1 - m / cm / nm / km / mm / um / pm')
     # 
     print('2 - eV / J / cal / kcal / BTU / kWh / Wh')
+    #
+    print('3 - Hz / kHz / MHz / GHz / THz')
 
     print('0 - Voltar!')
     option = input('Escolha uma opção: ')
@@ -638,6 +762,11 @@ def menu_conversores():
         conversor2()
         limpar_variaveis()
 
+    elif option == '3':
+        print('Opção 3 selecionada...')
+        conversor3()
+        limpar_variaveis()
+        
     elif option == '0':
         clear_screen()
         input('Pressione Enter para continuar...')
