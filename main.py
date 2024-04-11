@@ -594,13 +594,10 @@ def opcao2():
     nf = int(input('Digite o número quântico final (nf): '))
     ei=(-13.6/ni**2)   
     ef=(-13.6/nf**2)  
-    E_foton=ef-ei
-    Lamb_foton=hev*c/E_foton
-    Freq_foton=E_foton/hev
     
-    eF = E_foton
-    f = Freq_foton
-    lF = Lamb_foton
+    eF = ef-ei
+    f = eF/hev
+    lF = hev*c/eF
     
     print('Energia do fóton (eF):', eF, 'eV')
     print('Frequência do fóton (f):', f, 'Hz')
