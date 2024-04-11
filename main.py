@@ -100,460 +100,460 @@ def eV_J(num):
     num_c = num * 1.60217662 * (10 ** -19)
     return num_c
 
-# Conversor de J -> eV
-def J_eV(num):
-    num_c = num / 1.60217662 * (10 ** -19)
-    return num_c
+# # Conversor de J -> eV
+# def J_eV(num):
+#     num_c = num / 1.60217662 * (10 ** -19)
+#     return num_c
 
-# Conversor de eV -> cal
-def eV_cal(num):
-    num_c = num * 2.3900573613767 * (10 ** 20)
-    return num_c
+# # Conversor de eV -> cal
+# def eV_cal(num):
+#     num_c = num * 2.3900573613767 * (10 ** 20)
+#     return num_c
 
-# Conversor de cal -> eV
-def cal_eV(num):
-    num_c = num / 2.3900573613767 * (10 ** 20)
-    return num_c
+# # Conversor de cal -> eV
+# def cal_eV(num):
+#     num_c = num / 2.3900573613767 * (10 ** 20)
+#     return num_c
 
-# Conversor de eV -> kcal
-def eV_kcal(num):
-    num_c = num * 2.3900573613767 * (10 ** 17)
-    return num_c
+# # Conversor de eV -> kcal
+# def eV_kcal(num):
+#     num_c = num * 2.3900573613767 * (10 ** 17)
+#     return num_c
 
-# Conversor de kcal -> eV
-def kcal_eV(num):
-    num_c = num / 2.3900573613767 * (10 ** 17)
-    return num_c
+# # Conversor de kcal -> eV
+# def kcal_eV(num):
+#     num_c = num / 2.3900573613767 * (10 ** 17)
+#     return num_c
 
-# Conversor de eV -> BTU
-def eV_Btu(num):
-    num_c = num * 3.826733324 * (10 ** 19)
-    return num_c
+# # Conversor de eV -> BTU
+# def eV_Btu(num):
+#     num_c = num * 3.826733324 * (10 ** 19)
+#     return num_c
 
-# Conversor de BTU -> eV
-def Btu_eV(num):
-    num_c = num / 3.826733324 * (10 ** 19)
-    return num_c
+# # Conversor de BTU -> eV
+# def Btu_eV(num):
+#     num_c = num / 3.826733324 * (10 ** 19)
+#     return num_c
 
-# Conversor de eV -> kWh
-def eV_kWh(num):
-    num_c = num * 2.7777777777778 * (10 ** -7)
-    return num_c
+# # Conversor de eV -> kWh
+# def eV_kWh(num):
+#     num_c = num * 2.7777777777778 * (10 ** -7)
+#     return num_c
 
-# Conversor de kWh -> eV
-def kWh_eV(num):
-    num_c = num / 2.7777777777778 * (10 ** -7)
-    return num_c
+# # Conversor de kWh -> eV
+# def kWh_eV(num):
+#     num_c = num / 2.7777777777778 * (10 ** -7)
+#     return num_c
 
-# Conversor de eV -> Wh
-def eV_Wh(num):
-    num_c = num * 3.6 * (10 ** -6)
-    return num_c
+# # Conversor de eV -> Wh
+# def eV_Wh(num):
+#     num_c = num * 3.6 * (10 ** -6)
+#     return num_c
 
-# Conversor de eV -> Wh
-def Wh_eV(num):
-    num_c = num / 3.6 * (10 ** -6)
-    return num_c
-
-
-# Conversor de metros -> nm
-def metros_nm(num):
-    num_c = num * 1e9
-    return num_c
-
-# Conversor de nm -> metros
-def nm_metros(num):
-    num_c = num / 1e9
-    return num_c
-
-# Conversor de metros -> cm
-def metros_cm(num):
-    num_c = num * 100
-    return num_c
-
-# Conversor de cm -> metros
-def cm_metros(num):
-    num_c = num / 100
-    return num_c
-
-# Conversor de metros -> km
-def metros_km(num):
-    num_c = num / 1000
-    return num_c
-
-# Conversor de km -> metros
-def km_metros(num):
-    num_c = num * 1000
-    return num_c
-
-# Conversor de metros -> mm
-def metros_mm(num):
-    num_c = num * 1000
-    return num_c
-
-# Conversor de mm -> metros
-def mm_metros(num):
-    num_c = num / 1000
-    return num_c
-
-# Conversor de metros -> um
-def metros_um(num):
-    num_c = num * 1e6
-    return num_c
-
-# Conversor de um -> metros
-def um_metros(num):
-    num_c = num / 1e6
-    return num_c
-
-# Conversor de metros -> pm
-def metros_pm(num):
-    num_c = num * 1e12
-    return num_c
-
-# Conversor de pm -> metros
-def pm_metros(num):
-    num_c = num / 1e12
-    return num_c
-
-# Conversor de Hz -> kHz
-def Hz_kHz(num):
-    num_c = num / 1e3
-    return num_c
-
-# Conversor de kHz -> Hz
-def kHz_Hz(num):
-    num_c = num * 1e3
-    return num_c
-
-# Conversor de Hz -> MHz
-def Hz_MHz(num):
-    num_c = num / 1e6
-    return num_c
-
-# Conversor de MHz -> Hz
-def MHz_Hz(num):
-    num_c = num * 1e6
-    return num_c
-
-# Conversor de Hz -> GHz
-def Hz_GHz(num):
-    num_c = num / 1e9
-    return num_c
-
-# Conversor de GHz -> Hz
-def GHz_Hz(num):
-    num_c = num * 1e9
-    return num_c
-
-# Conversor de Hz -> THz
-def Hz_THz(num):
-    num_c = num / 1e12
-    return num_c
-
-# Conversor de THz -> Hz
-def THz_Hz(num):
-    num_c = num * 1e12
-    return num_c
+# # Conversor de eV -> Wh
+# def Wh_eV(num):
+#     num_c = num / 3.6 * (10 ** -6)
+#     return num_c
 
 
-def conversor2():
-    global num, num_c, num_c2
-    a = ''
-    b = ''
-    print('Digite a unidade de medida do número da entrada: ')
-    #
-    print('1 - eV')
-    #
-    print('2 - J')
-    #
-    print('3 - cal')
-    #
-    print('4 - kcal')
-    #
-    print('5 - BTU')
-    #
-    print('6 - kWh')
-    #
-    print('7 - Wh')
-    entrada = input('Escolha uma opção: ')
-    print('Digite o número que deseja converter: ')
-    num = float(input())
+# # Conversor de metros -> nm
+# def metros_nm(num):
+#     num_c = num * 1e9
+#     return num_c
 
-    if entrada == '1':
-        num_c = num
-    elif entrada == '2':
-        num_c = J_eV(num)
-    elif entrada == '3':
-        num_c = cal_eV(num)
-    elif entrada == '4':
-        num_c = kcal_eV(num)
-    elif entrada == '5':
-        num_c = Btu_eV(num)
-    elif entrada == '6':
-        num_c = kWh_eV(num)
-    elif entrada == '7':
-        num_c = Wh_eV(num)
+# # Conversor de nm -> metros
+# def nm_metros(num):
+#     num_c = num / 1e9
+#     return num_c
 
-    # print (num_c)
+# # Conversor de metros -> cm
+# def metros_cm(num):
+#     num_c = num * 100
+#     return num_c
 
-    if entrada == '1':
-        a = 'eV'
-    elif entrada == '2':
-        a = 'J'
-    elif entrada == '3':
-        a = 'cal'
-    elif entrada == '4':
-        a = 'kcal'
-    elif entrada == '5':
-        a = 'BTU'
-    elif entrada == '6':
-        a = 'kWh'
-    elif entrada == '7':
-        a = 'Wh'
+# # Conversor de cm -> metros
+# def cm_metros(num):
+#     num_c = num / 100
+#     return num_c
 
-    print('Digite a unidade de medida desejada: ')
-    #
-    print('1 - eV')
-    #
-    print('2 - J')
-    #
-    print('3 - cal')
-    #
-    print('4 - kcal')
-    #
-    print('5 - BTU')
-    #
-    print('6 - kWh')
-    #
-    print('7 - Wh')
-    saida = input('Escolha uma opção: ')
-    if saida == '1':
-        num_c2 = num_c
-    elif saida == '2':
-        num_c2 = eV_J(num_c)
-    elif saida == '3':
-        num_c2 = eV_cal(num_c)
-    elif saida == '4':
-        num_c2 = eV_kcal(num_c)
-    elif saida == '5':
-        num_c2 = eV_Btu(num_c)
-    elif saida == '6':
-        num_c2 = eV_kWh(num_c)
-    elif saida == '7':
-        num_c2 = eV_Wh(num_c)
-    else:
-        print('Opção inválida. Escolha uma opção válida.')
+# # Conversor de metros -> km
+# def metros_km(num):
+#     num_c = num / 1000
+#     return num_c
 
-    if saida == '1':
-        b = 'eV'
-    elif saida == '2':
-        b = 'J'
-    elif saida == '3':
-        b = 'cal'
-    elif saida == '4':
-        b = 'kcal'
-    elif saida == '5':
-        b = 'BTU'
-    elif saida == '6':
-        b = 'kWh'
-    elif saida == '7':
-        b = 'Wh'
+# # Conversor de km -> metros
+# def km_metros(num):
+#     num_c = num * 1000
+#     return num_c
 
-    print(f'Entrada: {num} {a}')
-    print(f'Saída: {num_c2} {b}')
+# # Conversor de metros -> mm
+# def metros_mm(num):
+#     num_c = num * 1000
+#     return num_c
 
-def conversor3():
-    global num, num_c, num_c2
-    a = ''
-    b = ''
-    print('Digite a unidade de medida do número da entrada: ')
-    # 
-    print('1 - Hz')
-    #
-    print('2 - kHz')
-    #
-    print('3 - MHz')
-    #
-    print('4 - GHz')
-    #
-    print('5 - THz')
-    entrada = input('Escolha uma opção: ')
-    print('Digite o número que deseja converter: ')
-    num = float(input())
+# # Conversor de mm -> metros
+# def mm_metros(num):
+#     num_c = num / 1000
+#     return num_c
 
-    if entrada == '1':
-        num_c = num
-    elif entrada == '2':
-        num_c = kHz_Hz(num)
-    elif entrada == '3':
-        num_c = MHz_Hz(num)
-    elif entrada == '4':
-        num_c = GHz_Hz(num)
-    elif entrada == '5':
-        num_c = THz_Hz(num)
+# # Conversor de metros -> um
+# def metros_um(num):
+#     num_c = num * 1e6
+#     return num_c
 
-    # print (num_c)
+# # Conversor de um -> metros
+# def um_metros(num):
+#     num_c = num / 1e6
+#     return num_c
 
-    if entrada == '1':
-        a = 'Hz'
-    elif entrada == '2':
-        a = 'kHz'
-    elif entrada == '3':
-        a = 'MHz'
-    elif entrada == '4':
-        a = 'GHz'
-    elif entrada == '5':
-        a = 'THz'
+# # Conversor de metros -> pm
+# def metros_pm(num):
+#     num_c = num * 1e12
+#     return num_c
 
-    print('Digite a unidade de medida desejada: ')
-    #
-    print('1 - Hz')
-    #
-    print('2 - kHz')
-    #
-    print('3 - MHz')
-    #
-    print('4 - GHz')
-    #
-    print('5 - THz')
-    saida = input('Escolha uma opção: ')
-    if saida == '1':
-        num_c2 = num_c
-    elif saida == '2':
-        num_c2 = Hz_kHz(num_c)
-    elif saida == '3':
-        num_c2 = Hz_MHz(num_c)
-    elif saida == '4':
-        num_c2 = Hz_GHz(num_c)
-    elif saida == '5':
-        num_c2 = Hz_THz(num_c)
-    else:
-        print('Opção inválida. Escolha uma opção válida.')
+# # Conversor de pm -> metros
+# def pm_metros(num):
+#     num_c = num / 1e12
+#     return num_c
 
-    if saida == '1':
-        b = 'Hz'
-    elif saida == '2':
-        b = 'kHz'
-    elif saida == '3':
-        b = 'MHz'
-    elif saida == '4':
-        b = 'GHz'
-    elif saida == '5':
-        b = 'THz'
+# # Conversor de Hz -> kHz
+# def Hz_kHz(num):
+#     num_c = num / 1e3
+#     return num_c
 
-    print(f'Entrada: {num} {a}')
-    print(f'Saída: {num_c2} {b}')
+# # Conversor de kHz -> Hz
+# def kHz_Hz(num):
+#     num_c = num * 1e3
+#     return num_c
+
+# # Conversor de Hz -> MHz
+# def Hz_MHz(num):
+#     num_c = num / 1e6
+#     return num_c
+
+# # Conversor de MHz -> Hz
+# def MHz_Hz(num):
+#     num_c = num * 1e6
+#     return num_c
+
+# # Conversor de Hz -> GHz
+# def Hz_GHz(num):
+#     num_c = num / 1e9
+#     return num_c
+
+# # Conversor de GHz -> Hz
+# def GHz_Hz(num):
+#     num_c = num * 1e9
+#     return num_c
+
+# # Conversor de Hz -> THz
+# def Hz_THz(num):
+#     num_c = num / 1e12
+#     return num_c
+
+# # Conversor de THz -> Hz
+# def THz_Hz(num):
+#     num_c = num * 1e12
+#     return num_c
 
 
+# def conversor2():
+#     global num, num_c, num_c2
+#     a = ''
+#     b = ''
+#     print('Digite a unidade de medida do número da entrada: ')
+#     #
+#     print('1 - eV')
+#     #
+#     print('2 - J')
+#     #
+#     print('3 - cal')
+#     #
+#     print('4 - kcal')
+#     #
+#     print('5 - BTU')
+#     #
+#     print('6 - kWh')
+#     #
+#     print('7 - Wh')
+#     entrada = input('Escolha uma opção: ')
+#     print('Digite o número que deseja converter: ')
+#     num = float(input())
+
+#     if entrada == '1':
+#         num_c = num
+#     elif entrada == '2':
+#         num_c = J_eV(num)
+#     elif entrada == '3':
+#         num_c = cal_eV(num)
+#     elif entrada == '4':
+#         num_c = kcal_eV(num)
+#     elif entrada == '5':
+#         num_c = Btu_eV(num)
+#     elif entrada == '6':
+#         num_c = kWh_eV(num)
+#     elif entrada == '7':
+#         num_c = Wh_eV(num)
+
+#     # print (num_c)
+
+#     if entrada == '1':
+#         a = 'eV'
+#     elif entrada == '2':
+#         a = 'J'
+#     elif entrada == '3':
+#         a = 'cal'
+#     elif entrada == '4':
+#         a = 'kcal'
+#     elif entrada == '5':
+#         a = 'BTU'
+#     elif entrada == '6':
+#         a = 'kWh'
+#     elif entrada == '7':
+#         a = 'Wh'
+
+#     print('Digite a unidade de medida desejada: ')
+#     #
+#     print('1 - eV')
+#     #
+#     print('2 - J')
+#     #
+#     print('3 - cal')
+#     #
+#     print('4 - kcal')
+#     #
+#     print('5 - BTU')
+#     #
+#     print('6 - kWh')
+#     #
+#     print('7 - Wh')
+#     saida = input('Escolha uma opção: ')
+#     if saida == '1':
+#         num_c2 = num_c
+#     elif saida == '2':
+#         num_c2 = eV_J(num_c)
+#     elif saida == '3':
+#         num_c2 = eV_cal(num_c)
+#     elif saida == '4':
+#         num_c2 = eV_kcal(num_c)
+#     elif saida == '5':
+#         num_c2 = eV_Btu(num_c)
+#     elif saida == '6':
+#         num_c2 = eV_kWh(num_c)
+#     elif saida == '7':
+#         num_c2 = eV_Wh(num_c)
+#     else:
+#         print('Opção inválida. Escolha uma opção válida.')
+
+#     if saida == '1':
+#         b = 'eV'
+#     elif saida == '2':
+#         b = 'J'
+#     elif saida == '3':
+#         b = 'cal'
+#     elif saida == '4':
+#         b = 'kcal'
+#     elif saida == '5':
+#         b = 'BTU'
+#     elif saida == '6':
+#         b = 'kWh'
+#     elif saida == '7':
+#         b = 'Wh'
+
+#     print(f'Entrada: {num} {a}')
+#     print(f'Saída: {num_c2} {b}')
+
+# def conversor3():
+#     global num, num_c, num_c2
+#     a = ''
+#     b = ''
+#     print('Digite a unidade de medida do número da entrada: ')
+#     # 
+#     print('1 - Hz')
+#     #
+#     print('2 - kHz')
+#     #
+#     print('3 - MHz')
+#     #
+#     print('4 - GHz')
+#     #
+#     print('5 - THz')
+#     entrada = input('Escolha uma opção: ')
+#     print('Digite o número que deseja converter: ')
+#     num = float(input())
+
+#     if entrada == '1':
+#         num_c = num
+#     elif entrada == '2':
+#         num_c = kHz_Hz(num)
+#     elif entrada == '3':
+#         num_c = MHz_Hz(num)
+#     elif entrada == '4':
+#         num_c = GHz_Hz(num)
+#     elif entrada == '5':
+#         num_c = THz_Hz(num)
+
+#     # print (num_c)
+
+#     if entrada == '1':
+#         a = 'Hz'
+#     elif entrada == '2':
+#         a = 'kHz'
+#     elif entrada == '3':
+#         a = 'MHz'
+#     elif entrada == '4':
+#         a = 'GHz'
+#     elif entrada == '5':
+#         a = 'THz'
+
+#     print('Digite a unidade de medida desejada: ')
+#     #
+#     print('1 - Hz')
+#     #
+#     print('2 - kHz')
+#     #
+#     print('3 - MHz')
+#     #
+#     print('4 - GHz')
+#     #
+#     print('5 - THz')
+#     saida = input('Escolha uma opção: ')
+#     if saida == '1':
+#         num_c2 = num_c
+#     elif saida == '2':
+#         num_c2 = Hz_kHz(num_c)
+#     elif saida == '3':
+#         num_c2 = Hz_MHz(num_c)
+#     elif saida == '4':
+#         num_c2 = Hz_GHz(num_c)
+#     elif saida == '5':
+#         num_c2 = Hz_THz(num_c)
+#     else:
+#         print('Opção inválida. Escolha uma opção válida.')
+
+#     if saida == '1':
+#         b = 'Hz'
+#     elif saida == '2':
+#         b = 'kHz'
+#     elif saida == '3':
+#         b = 'MHz'
+#     elif saida == '4':
+#         b = 'GHz'
+#     elif saida == '5':
+#         b = 'THz'
+
+#     print(f'Entrada: {num} {a}')
+#     print(f'Saída: {num_c2} {b}')
 
 
-def conversor1():
-    global num, num_c, num_c2
-    a = ''
-    b = ''
-    print('Digite a unidade de medida do número da entrada: ')
-    # Correto
-    print('1 - m')
-    #
-    print('2 - cm')
-    #
-    print('3 - nm')
-    #
-    print('4 - km')
-    #
-    print('5 - mm')
-    #
-    print('6 - um')
-    #
-    print('7 - pm')
-    entrada = input('Escolha uma opção: ')
-    print('Digite o número que deseja converter: ')
-    num = float(input())
-    #print (entrada)
-    if entrada == '1':
-        num_c = num
-    elif entrada == '2':
-        num_c = cm_metros(num)
-    elif entrada == '3':
-        num_c = nm_metros(num)
-    elif entrada == '4':
-        num_c = km_metros(num)
-    elif entrada == '5':
-        num_c = mm_metros(num)
-    elif entrada == '6':
-        num_c = um_metros(num)
-    elif entrada == '7':
-        num_c = pm_metros(num)
 
-    # print (num_c)
+
+# def conversor1():
+#     global num, num_c, num_c2
+#     a = ''
+#     b = ''
+#     print('Digite a unidade de medida do número da entrada: ')
+#     # Correto
+#     print('1 - m')
+#     #
+#     print('2 - cm')
+#     #
+#     print('3 - nm')
+#     #
+#     print('4 - km')
+#     #
+#     print('5 - mm')
+#     #
+#     print('6 - um')
+#     #
+#     print('7 - pm')
+#     entrada = input('Escolha uma opção: ')
+#     print('Digite o número que deseja converter: ')
+#     num = float(input())
+#     #print (entrada)
+#     if entrada == '1':
+#         num_c = num
+#     elif entrada == '2':
+#         num_c = cm_metros(num)
+#     elif entrada == '3':
+#         num_c = nm_metros(num)
+#     elif entrada == '4':
+#         num_c = km_metros(num)
+#     elif entrada == '5':
+#         num_c = mm_metros(num)
+#     elif entrada == '6':
+#         num_c = um_metros(num)
+#     elif entrada == '7':
+#         num_c = pm_metros(num)
+
+#     # print (num_c)
     
-    if entrada == '1':
-        a = 'm'
-    elif entrada == '2':
-        a = 'cm'
-    elif entrada == '3':
-        a = 'nm'
-    elif entrada == '4':
-        a = 'km'
-    elif entrada == '5':
-        a = 'mm'
-    elif entrada == '6':
-        a = 'um'
-    elif entrada == '7':
-        a = 'pm'
+#     if entrada == '1':
+#         a = 'm'
+#     elif entrada == '2':
+#         a = 'cm'
+#     elif entrada == '3':
+#         a = 'nm'
+#     elif entrada == '4':
+#         a = 'km'
+#     elif entrada == '5':
+#         a = 'mm'
+#     elif entrada == '6':
+#         a = 'um'
+#     elif entrada == '7':
+#         a = 'pm'
 
-    print('Digite a unidade de medida desejada: ')
-    #
-    print('1 - m')
-    #
-    print('2 - cm')
-    # Correto
-    print('3 - nm')
-    #
-    print('4 - km')
-    #
-    print('5 - mm')
-    #
-    print('6 - um')
-    #
-    print('7 - pm')
-    saida = input('Escolha uma opção: ')
-    if saida == '1':
-        num_c2 = num_c
-    elif saida == '2':
-        num_c2 = metros_cm(num_c)
-    elif saida == '3':
-        num_c2 = metros_nm(num_c)
-    elif saida == '4':
-        num_c2 = metros_km(num_c)
-    elif saida == '5':
-        num_c2 = metros_mm(num_c)
-    elif saida == '6':
-        num_c2 = metros_um(num_c)
-    elif saida == '7':
-        num_c2 = metros_pm(num_c)
-    else:
-        print('Opção inválida. Escolha uma opção válida.')
+#     print('Digite a unidade de medida desejada: ')
+#     #
+#     print('1 - m')
+#     #
+#     print('2 - cm')
+#     # Correto
+#     print('3 - nm')
+#     #
+#     print('4 - km')
+#     #
+#     print('5 - mm')
+#     #
+#     print('6 - um')
+#     #
+#     print('7 - pm')
+#     saida = input('Escolha uma opção: ')
+#     if saida == '1':
+#         num_c2 = num_c
+#     elif saida == '2':
+#         num_c2 = metros_cm(num_c)
+#     elif saida == '3':
+#         num_c2 = metros_nm(num_c)
+#     elif saida == '4':
+#         num_c2 = metros_km(num_c)
+#     elif saida == '5':
+#         num_c2 = metros_mm(num_c)
+#     elif saida == '6':
+#         num_c2 = metros_um(num_c)
+#     elif saida == '7':
+#         num_c2 = metros_pm(num_c)
+#     else:
+#         print('Opção inválida. Escolha uma opção válida.')
     
-    if saida == '1':
-        b = 'm'
-    elif saida == '2':
-        b = 'cm'
-    elif saida == '3':
-        b = 'nm'
-    elif saida == '4':
-        b = 'km'
-    elif saida == '5':
-        b = 'mm'
-    elif saida == '6':
-        b = 'um'
-    elif saida == '7':
-        b = 'pm'
+#     if saida == '1':
+#         b = 'm'
+#     elif saida == '2':
+#         b = 'cm'
+#     elif saida == '3':
+#         b = 'nm'
+#     elif saida == '4':
+#         b = 'km'
+#     elif saida == '5':
+#         b = 'mm'
+#     elif saida == '6':
+#         b = 'um'
+#     elif saida == '7':
+#         b = 'pm'
 
-    print(f'Entrada: {num} {a}')
-    print(f'Saída: {num_c2} {b}')
-    # Precisa de unidades de
+#     print(f'Entrada: {num} {a}')
+#     print(f'Saída: {num_c2} {b}')
+#     # Precisa de unidades de
 
 
 
@@ -638,10 +638,11 @@ def opcao3():
         print('Opção 3 selecionada...')
         ni = float(input('Digite o número quântico inicial (ni): '))
         freq_foton = float(input("Digite a frequência do fóton em Hz: "))
-        Ef = -13.6/ni ** 2 - hev * freq_foton
-        print(f"Ef: {Ef:.3f} eV")
-        nf = round((-13.6/Ef) ** 0.5)
-        print('Número quântico final (nf):', nf)
+        # Ef = -13.6/ni ** 2 - hev * freq_foton
+        # print(f"Ef: {Ef:.3f} eV")
+        # nf = round((-13.6/Ef) ** 0.5)
+        # print('Número quântico final (nf):', nf)
+        print('Teste')
     elif option == '4':
         print('Opção 4 selecionada...')
         ni = float(input('Digite o número quântico final (ni): '))
@@ -657,7 +658,7 @@ def opcao3():
 def opcao4():
     # Mostrar a resposta de duas formas: número com duas casas decimais e em forma de número inteiro
     global n, eF, f, lF, r, v, K, U, E, lE
-    print("selecione o n que a questão deseja achar (absorve)")
+    print("Selecione a entrada: (absorve)")
     print('1 - n final + f') 
     print('2 - n final + lF ')
     # Retorna n inicial
@@ -745,41 +746,41 @@ def opcao5():
 
 # Menus 
 
-# Função para o menu de conversores
-def menu_conversores():
-    global n, eF, f, lF, r, v, K, U, E, lE
-    clear_screen()
-    print('Opções de entradas:')
-    # 
-    print('1 - m / cm / nm / km / mm / um / pm')
-    # 
-    print('2 - eV / J / cal / kcal / BTU / kWh / Wh')
-    #
-    print('3 - Hz / kHz / MHz / GHz / THz')
+# # Função para o menu de conversores
+# def menu_conversores():
+#     global n, eF, f, lF, r, v, K, U, E, lE
+#     clear_screen()
+#     print('Opções de entradas:')
+#     # 
+#     print('1 - m / cm / nm / km / mm / um / pm')
+#     # 
+#     print('2 - eV / J / cal / kcal / BTU / kWh / Wh')
+#     #
+#     print('3 - Hz / kHz / MHz / GHz / THz')
 
-    print('0 - Voltar!')
-    option = input('Escolha uma opção: ')
+#     print('0 - Voltar!')
+#     option = input('Escolha uma opção: ')
 
-    if option == '1':
-        print('Opção 1 selecionada...')
-        conversor1()
-        limpar_variaveis()
+#     if option == '1':
+#         print('Opção 1 selecionada...')
+#         conversor1()
+#         limpar_variaveis()
 
-    elif option == '2':
-        print('Opção 2 selecionada...')
-        conversor2()
-        limpar_variaveis()
+#     elif option == '2':
+#         print('Opção 2 selecionada...')
+#         conversor2()
+#         limpar_variaveis()
 
-    elif option == '3':
-        print('Opção 3 selecionada...')
-        conversor3()
-        limpar_variaveis()
+#     elif option == '3':
+#         print('Opção 3 selecionada...')
+#         conversor3()
+#         limpar_variaveis()
 
-    elif option == '0':
-        clear_screen()
+#     elif option == '0':
+#         clear_screen()
 
-    else:
-        print('Opção inválida. Escolha uma opção válida.')
+#     else:
+#         print('Opção inválida. Escolha uma opção válida.')
 
 
 # Function to call the menu
@@ -859,7 +860,7 @@ while True:
 
     elif option == '2':
         print('Redirecionando para o menu de conversores...')
-        menu_conversores()
+        # menu_conversores()
 
     elif option == '3':
         print('Limpando variáveis...')
