@@ -587,7 +587,6 @@ def opcao4():
 
 # Função opcao_5: Trata tanto a conversão de f ou lambda para E, quanto de E para f e lambda
 def opcao_5():
-#   global E_foton, Freq_foton, Lamb_foton
   print("Escolha o tipo de cálculo:")
   print(
       "1 - Dada a frequência (f) ou comprimento de onda (λ) do fóton, calcular a energia (E) do fóton."
@@ -599,11 +598,11 @@ def opcao_5():
 
   if escolha == '1':
     sub_escolha = input(
-        "Digite 'f' para frequência ou 'lambda' para comprimento de onda: ")
-    if sub_escolha == 'f':
+        "Digite '1' para frequência ou '2' para comprimento de onda: ")
+    if sub_escolha == '1':
       Freq_foton = float(input("Digite a frequência do fóton em Hz: "))
       E_foton = h * Freq_foton  # E = hf
-    elif sub_escolha == 'lambda':
+    elif sub_escolha == '2':
       Lamb_foton = float(
           input("Digite o comprimento de onda do fóton em metros: "))
       E_foton = (h * c) / Lamb_foton  # E = hc/λ
@@ -623,7 +622,6 @@ def opcao_5():
 
   else:
     print("Opção inválida.")
-
 
 # Menus 
 
@@ -663,11 +661,11 @@ def menu():
   global n, eF, f, lF, r, v, K, U, E, lE
   clear_screen()
   print('Opções de cálculo:')
-  print('1 - Dados n: Calcular r, v, lE, K, U, E')
-  print('2 - Dados n inicial e n final: Calcular eF, f e lF')
-  print('3 - Dados n inicial/final e f/lF (emitido): Calcular n final/inicial')
-  print('4 - Dados n inicial/final e f/lF (absorvido): Calcular n final/inicial')
-  print('5 - Calcular energia ou f/lF do fóton dado f/lF ou energia')
+  print('1 - Dados n: Calcula r, v, lE, K, U, E')
+  print('2 - Dados n inicial e n final: Calcula eF, f e lF')
+  print('3 - Dados n inicial/final e f/lF (emitido): Calcula n final/inicial')
+  print('4 - Dados n inicial/final e f/lF (absorvido): Calcula n final/inicial')
+  print('5 - Calcula energia ou f/lF do fóton dado f/lF ou energia')
   print('0 - Voltar/Sair')
 
   option = input('Escolha uma opção: ')
