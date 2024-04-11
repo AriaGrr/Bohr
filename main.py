@@ -22,15 +22,15 @@ c=3*10**8
 n = Decimal(0) # Número quântico
 ni = Decimal(0) # Número quântico inicial
 nf = Decimal(0) # Número quântico final
-eF = Decimal(0) # Energia do fóton absorvido/emitido
-f = Decimal(0) # Frequência do fóton absorvido/emitido
-lF = Decimal (0) # Comprimento de onda (lambda) do fóton absorvido/emitido
-r = Decimal (0) # Raio da órbita
-v = Decimal (0) # Velocidade
-K = Decimal (0) # Energia cinética
-U = Decimal (0) # Energia potencial
-E = Decimal (0) # Energia total
-lE = Decimal (0) # Comprimento de onda do elétron
+eF = Decimal(0) # Energia do fóton absorvido/emitido (eV)
+f = Decimal(0) # Frequência do fóton absorvido/emitido (Hz)
+lF = Decimal (0) # Comprimento de onda (lambda) do fóton absorvido/emitido (m)
+r = Decimal (0) # Raio da órbita (m)
+v = Decimal (0) # Velocidade (m/s)
+K = Decimal (0) # Energia cinética (eV)
+U = Decimal (0) # Energia potencial (eV)
+E = Decimal (0) # Energia total (eV)
+lE = Decimal (0) # Comprimento de onda do elétron (m)
 
 
 num = Decimal(0) # Número 
@@ -102,6 +102,55 @@ def energia_total():
 # Funções para conversões
 # Todos os conversores vão para uma unidade padrão e depois convertem para a unidade desejada
 
+def eV_J(num):
+    num_c = num * 1.60217662 * (10 ** -19)
+    return num_c
+
+def J_eV(num):
+    num_c = num / 1.60217662 * (10 ** -19)
+    return num_c
+
+def eV_cal(num):
+    num_c = num * 2.3900573613767 * (10 ** 20)
+    return num_c
+
+def cal_eV(num):
+    num_c = num / 2.3900573613767 * (10 ** 20)
+    return num_c
+
+def eV_kcal(num):
+    num_c = num * 2.3900573613767 * (10 ** 17)
+    return num_c
+
+def kcal_eV(num):
+    num_c = num / 2.3900573613767 * (10 ** 17)
+    return num_c
+
+def eV_Btu(num):
+    num_c = num * 3.826733324 * (10 ** 19)
+    return num_c
+
+def Btu_eV(num):
+    num_c = num / 3.826733324 * (10 ** 19)
+    return num_c
+
+def eV_kWh(num):
+    num_c = num * 2.7777777777778 * (10 ** -7)
+    return num_c
+
+def kWh_eV(num):
+    num_c = num / 2.7777777777778 * (10 ** -7)
+    return num_c
+
+def eV_Wh(num):
+    num_c = num * 3.6 * (10 ** -6)
+    return num_c
+
+def Wh_eV(num):
+    num_c = num / 3.6 * (10 ** -6)
+    return num_c
+
+
 # Conversor de metros -> nm
 def metros_nm(num):
     num_c = num * 1e9
@@ -162,168 +211,129 @@ def pm_metros(num):
     num_c = num / 1e12
     return num_c
 
-# Conversor de eV -> J
-def eV_J(num):
-    num_c = num * 1.60217662 * (10 ** -19)
-    return num_c
+# # Conversor de eV -> J
+# def eV_J(num):
+#     num_c = num * 1.60217662 * (10 ** -19)
+#     return num_c
 
-# Conversor de J -> eV
-def J_eV(num):
-    num_c = num / 1.60217662 * (10 ** -19)
-    return num_c
+# # Conversor de J -> eV
+# def J_eV(num):
+#     num_c = num / 1.60217662 * (10 ** -19)
+#     return num_c
 
-# Conversor de eV -> cal
-def eV_cal(num):
-    num_c = num * 2.3900573613767 * (10 ** 20)
-    return num_c
+# # Conversor de eV -> cal
+# def eV_cal(num):
+#     num_c = num * 2.3900573613767 * (10 ** 20)
+#     return num_c
+
+def conversor2():
+    global num, num_c, num_c2
+    a = ''
+    b = ''
+
+    print('Digite o número que deseja converter: ')
+    num = float(input())
+    print('Digite a unidade de medida do número: ')
+    #
+    print('1 - eV')
+    #
+    print('2 - J')
+    #
+    print('3 - cal')
+    #
+    print('4 - kcal')
+    #
+    print('5 - BTU')
+    #
+    print('6 - kWh')
+    #
+    print('7 - Wh')
+    entrada = input('Escolha uma opção: ')
+    if entrada == '1':
+        num_c = num
+    elif entrada == '2':
+        num_c = J_eV(num)
+    elif entrada == '3':
+        num_c = cal_eV(num)
+    elif entrada == '4':
+        num_c = kcal_eV(num)
+    elif entrada == '5':
+        num_c = Btu_eV(num)
+    elif entrada == '6':
+        num_c = kWh_eV(num)
+    elif entrada == '7':
+        num_c = Wh_eV(num)
+
+    # print (num_c)
+
+    if entrada == '1':
+        a = 'eV'
+    elif entrada == '2':
+        a = 'J'
+    elif entrada == '3':
+        a = 'cal'
+    elif entrada == '4':
+        a = 'kcal'
+    elif entrada == '5':
+        a = 'BTU'
+    elif entrada == '6':
+        a = 'kWh'
+    elif entrada == '7':
+        a = 'Wh'
+
+    print('Digite a unidade de medida desejada: ')
+    #
+    print('1 - eV')
+    #
+    print('2 - J')
+    #
+    print('3 - cal')
+    #
+    print('4 - kcal')
+    #
+    print('5 - BTU')
+    #
+    print('6 - kWh')
+    #
+    print('7 - Wh')
+    saida = input('Escolha uma opção: ')
+    if saida == '1':
+        num_c2 = num_c
+    elif saida == '2':
+        num_c2 = eV_J(num_c)
+    elif saida == '3':
+        num_c2 = eV_cal(num_c)
+    elif saida == '4':
+        num_c2 = eV_kcal(num_c)
+    elif saida == '5':
+        num_c2 = eV_Btu(num_c)
+    elif saida == '6':
+        num_c2 = eV_kWh(num_c)
+    elif saida == '7':
+        num_c2 = eV_Wh(num_c)
+    else:
+        print('Opção inválida. Escolha uma opção válida.')
+
+    if saida == '1':
+        b = 'eV'
+    elif saida == '2':
+        b = 'J'
+    elif saida == '3':
+        b = 'cal'
+    elif saida == '4':
+        b = 'kcal'
+    elif saida == '5':
+        b = 'BTU'
+    elif saida == '6':
+        b = 'kWh'
+    elif saida == '7':
+        b = 'Wh'
+
+    print(f'Entrada: {num} {a}')
+    print(f'Saída: {num_c2} {b}')
 
 
 
-
-
-
-# Opções do menu de conversores imbutido
-
-# def conversores2(y):
-#     global num_c, r, v, K, U, E, lE, lF, f, eF, ow, num
-
-#     valor = y
-#     print('Digite a saida desejada: ')
-#     print (y)
-#     if y == r or y == v or y == lE:
-#         print('1 - cm')
-#         print('2 - nm')
-#         print('3 - km')
-#         print('4 - mm')
-#         print('5 - um')
-#         print('6 - pm')
-#         output = input()
-#         if output == '1':
-#             print ('Opção 1 selecionada...')
-#                 # Colocar logicas de conversão
-#         elif output == '2':
-#             print ('Opção 2 selecionada...')
-#             metros_nm(num)
-#             print(f'{num:.4g} m = {num_c:.4g} nm')
-#         elif output == '3':
-#             print ('Opção 3 selecionada...')
-#                 # Colocar logicas de conversão
-#         elif output == '4':
-#             print ('Opção 4 selecionada...')
-#                 # Colocar logicas de conversão
-#         elif output == '5':
-#             print ('Opção 5 selecionada...')
-#                 # Colocar logicas de conversão
-#         elif output == '6':
-#             print ('Opção 6 selecionada...')
-#                 # Colocar logicas de conversão
-#         else:
-#             print('Opção inválida. Escolha uma opção válida.')
-
-#     elif num == K or num == U or num == E:
-#         print('1 - eV')
-#         print('2 - J')
-#         print('3 - cal')
-#         print('4 - kcal')
-#         print('5 - BTU')
-#         print('6 - kWh')
-#         print('7 - Wh')
-
-#         output = input()
-#         if output == '1':
-#             print ('Opção 1 selecionada...')
-#                 # Colocar logicas de conversão
-#         elif output == '2':
-#             print ('Opção 2 selecionada...')
-#                 # Colocar logicas de conversão
-#         elif output == '3':
-#             print ('Opção 3 selecionada...')
-#                 # Colocar logicas de conversão
-#         elif output == '4':
-#             print ('Opção 4 selecionada...')
-#                 # Colocar logicas de conversão
-#         elif output == '5':
-#             print ('Opção 5 selecionada...')
-#                 # Colocar logicas de conversão
-#         elif output == '6':
-#             print ('Opção 6 selecionada...')
-#                 # Colocar logicas de conversão
-#         elif output == '7':
-#             print ('Opção 7 selecionada...')
-#                 # Colocar logicas de conversão
-
-# def conversores(y):
-#     global ow, num, num_c, r, v, K, U, E, lE, lF, f, eF
-
-#     print('Deseja fazer uma conversão? (S/N)')
-#     op = input()
-
-#     if op == 'S' or 's':
-#         ow = 1
-#     if ow == 1:
-#         print('Escolha o valor que deseja converter: ')
-#         x = input()
-#         if y == 1:
-#             if x == 1:
-#                 conversores2(r)
-#                 ow = 0
-#                 conversores(1)
-#             elif x == 2:
-#                 conversores2(v)
-#                 ow = 0
-#                 conversores(1)
-#             elif x == 3:
-#                 conversores2(K)
-#                 ow = 0
-#                 conversores(1)
-#             elif x == 4:
-#                 conversores2(U)
-#                 ow = 0
-#                 conversores(1)
-#             elif x == 5:
-#                 conversores2(E)
-#                 ow = 0
-#                 conversores(1)
-#             elif x == 6:
-#                 conversores2(lE)
-#                 ow = 0
-#                 conversores(1)
-        
-#         else:
-#             print('Opção inválida. Escolha uma opção válida.')
-
-#     else:
-#         input('Pressione Enter para continuar...')
-        
-# def escolhas1():
-#     print('Digite o número da opção que deseja converter: ')
-#     option = input()
-#     if option == '1':
-#         print('Opção 1 selecionada...')
-#         conversores(r)
-
-#     elif option == '2':
-#         print('Opção 2 selecionada...')
-#         conversores(v)
-
-#     elif option == '3':
-#         print('Opção 3 selecionada...')
-#         conversores(K)
-
-#     elif option == '4':
-#         print('Opção 4 selecionada...')
-#         conversores(U)
-
-#     elif option == '5':
-#         print('Opção 5 selecionada...')
-#         conversores(E)
-
-#     elif option == '6':
-#         print('Opção 6 selecionada...')
-#         conversores(lE)
-
-#     else:
-#         print('Opção inválida. Escolha uma opção válida.')
 
 def conversor1():
     global num, num_c, num_c2
@@ -364,7 +374,7 @@ def conversor1():
     elif entrada == '7':
         num_c = pm_metros(num)
 
-    print (num_c)
+    # print (num_c)
     
     if entrada == '1':
         a = 'm'
@@ -432,6 +442,8 @@ def conversor1():
     print(f'Entrada: {num} {a}')
     print(f'Saída: {num_c2} {b}')
     # Precisa de unidades de
+
+
 
 # Opções do menu de cálculos
 
@@ -634,14 +646,6 @@ def menu_conversores():
     print('1 - m / cm / nm / km / mm / um / pm')
     # 
     print('2 - eV / J / cal / kcal / BTU / kWh / Wh')
-    # 
-    print('3 - ')
-    # 
-    print('4 - ')
-    # 
-    print('5 - ')
-    # 
-    print('6 - ')
 
     print('0 - Voltar!')
     option = input('Escolha uma opção: ')
@@ -653,22 +657,8 @@ def menu_conversores():
 
     elif option == '2':
         print('Opção 2 selecionada...')
-
-
-    elif option == '3':
-        print('Opção 3 selecionada...')
-
-
-    elif option == '4':
-        print('Opção 4 selecionada...')
-
-
-    elif option == '5':
-        print('Opção 5 selecionada...')
-
-
-    elif option == '6':
-        print('Opção 6 selecionada...')
+        conversor2()
+        limpar_variaveis()
 
     elif option == '0':
         clear_screen()
@@ -724,17 +714,17 @@ while True:
         print(" ")
         print('Funcionalidades:')
         print(" ")
-        print('-Cálculo de diversas propriedades físicas do átomo de Bohr')
+        print('- Cálculo de diversas propriedades físicas do átomo de Bohr')
         print(" ")
-        print('-Conversão de unidades')
+        print('- Conversão de unidades')
         print(" ")
-        print('-Interface amigável e fácil de usar')
+        print('-I nterface amigável e fácil de usar')
         print(" ")
         print('Limitações:')
         print(" ")
-        print('-O modelo de Bohr é um modelo simplificado e não leva em consideração todos os aspectos da estrutura atômica.')
+        print('- O modelo de Bohr é um modelo simplificado e não leva em consideração todos os aspectos da estrutura atômica.')
         print(" ")
-        print('-O programa pode apresentar resultados imprecisos para alguns átomos e para alguns cálculos.:')
+        print('- O programa pode apresentar resultados imprecisos para alguns átomos e para alguns cálculos.:')
         # Opinar e se necessario modificar a descrição
         print('Pressione Enter para continuar...')
         input() 
