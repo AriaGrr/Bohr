@@ -248,12 +248,12 @@ def GHz_Hz(num):
 
 # Conversor de Hz -> THz
 def Hz_THz(num):
-    num_c = num / 1e12
+    num_c = num * 1e12
     return num_c
 
 # Conversor de THz -> Hz
 def THz_Hz(num):
-    num_c = num * 1e12
+    num_c = num / 1e12
     return num_c
 
 def conversor2():
@@ -384,13 +384,13 @@ def conversor3():
     if entrada == '1':
         num_c = num
     elif entrada == '2':
-        num_c = Hz_kHz(num)
+        num_c = kHz_Hz(num)
     elif entrada == '3':
-        num_c = Hz_MHz(num)
+        num_c = MHz_Hz(num)
     elif entrada == '4':
-        num_c = Hz_GHz(num)
+        num_c = GHz_Hz(num)
     elif entrada == '5':
-        num_c = Hz_THz(num)
+        num_c = THz_Hz(num)
 
     # print (num_c)
 
@@ -420,13 +420,13 @@ def conversor3():
     if saida == '1':
         num_c2 = num_c
     elif saida == '2':
-        num_c2 = kHz_Hz(num_c)
+        num_c2 = Hz_kHz(num_c)
     elif saida == '3':
-        num_c2 = MHz_Hz(num_c)
+        num_c2 = Hz_MHz(num_c)
     elif saida == '4':
-        num_c2 = GHz_Hz(num_c)
+        num_c2 = Hz_GHz(num_c)
     elif saida == '5':
-        num_c2 = THz_Hz(num_c)
+        num_c2 = Hz_THz(num_c)
     else:
         print('Opção inválida. Escolha uma opção válida.')
 
@@ -594,9 +594,13 @@ def opcao2():
     nf = int(input('Digite o número quântico final (nf): '))
     ei=(-13.6/ni**2)   
     ef=(-13.6/nf**2)  
-    eF=ef-ei
-    lF=hev*c/eF
-    f=eF/hev
+    E_foton=ef-ei
+    Lamb_foton=hev*c/E_foton
+    Freq_foton=E_foton/hev
+    
+    eF = E_foton
+    f = Freq_foton
+    lF = Lamb_foton
     
     print('Energia do fóton (eF):', eF, 'eV')
     print('Frequência do fóton (f):', f, 'Hz')
@@ -766,7 +770,7 @@ def menu_conversores():
         print('Opção 3 selecionada...')
         conversor3()
         limpar_variaveis()
-        
+
     elif option == '0':
         clear_screen()
         input('Pressione Enter para continuar...')
