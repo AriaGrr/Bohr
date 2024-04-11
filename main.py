@@ -606,11 +606,12 @@ def opcao2():
 
 # Entrada: n inicial ou final + f ou lF (absorvido) ; Saida: n final ou n inicial.
 def opcao3():
+def opcao3():
     # Mostrar a resposta de duas formas: número com duas casas decimais e em forma de número inteiro
     global n, eF, f, lF, r, v, K, U, E, lE
     print('Opções de entradas:')
     # Retorna n final
-    print("Selecione o n que o exercicio oferece e a lambda/frequencia(emitido): ")
+    print("selecione o n que o exercicio oferece e a lambida/frequencia(emitido): ")
     print('1 - n final + f') 
     print('2 - n final + lF ')
     # Retorna n inicial
@@ -620,17 +621,17 @@ def opcao3():
 
     if option == '1':
         print('Opção 1 selecionada...')
-        nf = float(input('Digite o número quântico final (nf): '))
-        f = float(input('Digite a frequência (f) em Hz: '))
-        Ei = -13.6/nf ** 2 + hev * f
+        nf = float(input('Digite o número quântico final (nf)(): '))
+        freq_foton = float(input('Digite a frequência (f) em Hz: '))
+        Ei = -13.6/nf ** 2 + hev * freq_foton
         print(f"Ei: {Ei:.3f} eV")
         ni = round((-13.6/Ei) ** 0.5)
         print('Número quântico inicial (ni):', ni)
     elif option == '2':
         print('Opção 2 selecionada...')
         nf = float(input('Digite o número quântico final (nf): '))
-        lF = float(input("Digite o comprimento de onda do fóton em m: "))
-        Ei = (-13.6/nf ** 2) + ((hev*c) / lF)
+        lamb_foton = float(input("Digite o comprimento de onda do fóton em m: "))
+        Ei = (-13.6/nf ** 2) + ((hev*c) / lamb_foton)
         print(f"Ei: {Ei:.3f} eV")
         ni = round((-13.6/Ei) ** 0.5)                        
         print('Número quântico inicial (ni):', ni)
@@ -644,12 +645,13 @@ def opcao3():
         print('Número quântico final (nf):', nf)
     elif option == '4':
         print('Opção 4 selecionada...')
-        ni = float(input('Digite o número quântico inicial (ni): '))
-        lF = float(input("Digite o comprimento de onda do fóton em m: "))
-        Ef = (-13.6/ni ** 2) - ((hev*c) / lF)
+        ni = float(input('Digite o número quântico final (ni): '))
+        lamb_foton = float(input("Digite o comprimento de onda do fóton em m: "))
+        Ef = (-13.6/ni ** 2) - ((hev*c) / lamb_foton)
         print(f"Ef: {Ef:.3f} eV")
         nf = round((-13.6/Ef) ** 0.5)                        
-        print('Número quântico final (nf):', nf)
+        print('Número quântico inicial (nf):', nf)
+    
 
 # Entrada: n inicial ou final + f ou lF (emitido) ; Saida: n final ou n inicial.
 def opcao4():
