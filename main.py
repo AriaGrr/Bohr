@@ -255,16 +255,13 @@ def Hz_THz(num):
 def THz_Hz(num):
     num_c = num * 1e12
     return num_c
-    
+
 
 def conversor2():
     global num, num_c, num_c2
     a = ''
     b = ''
-
-    print('Digite o número que deseja converter: ')
-    num = float(input())
-    print('Digite a unidade de medida do número: ')
+    print('Digite a unidade de medida do número da entrada: ')
     #
     print('1 - eV')
     #
@@ -280,6 +277,9 @@ def conversor2():
     #
     print('7 - Wh')
     entrada = input('Escolha uma opção: ')
+    print('Digite o número que deseja converter: ')
+    num = float(input())
+
     if entrada == '1':
         num_c = num
     elif entrada == '2':
@@ -367,10 +367,7 @@ def conversor3():
     global num, num_c, num_c2
     a = ''
     b = ''
-
-    print('Digite o número que deseja converter: ')
-    num = float(input())
-    print('Digite a unidade de medida do número: ')
+    print('Digite a unidade de medida do número da entrada: ')
     # 
     print('1 - Hz')
     #
@@ -382,6 +379,9 @@ def conversor3():
     #
     print('5 - THz')
     entrada = input('Escolha uma opção: ')
+    print('Digite o número que deseja converter: ')
+    num = float(input())
+
     if entrada == '1':
         num_c = num
     elif entrada == '2':
@@ -452,10 +452,7 @@ def conversor1():
     global num, num_c, num_c2
     a = ''
     b = ''
-
-    print('Digite o número que deseja converter: ')
-    num = float(input())
-    print('Digite a unidade de medida do número: ')
+    print('Digite a unidade de medida do número da entrada: ')
     # Correto
     print('1 - m')
     #
@@ -471,7 +468,9 @@ def conversor1():
     #
     print('7 - pm')
     entrada = input('Escolha uma opção: ')
-    print (entrada)
+    print('Digite o número que deseja converter: ')
+    num = float(input())
+    #print (entrada)
     if entrada == '1':
         num_c = num
     elif entrada == '2':
