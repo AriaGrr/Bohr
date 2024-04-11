@@ -64,88 +64,93 @@ def limpar_variaveis():
 
 # Cálculo do raio da órbita (m)
 def raio_orbita():
-    #r = Decimal((n ** 2) * (h ** 2) / (4 * (math.pi ** 2) * 9.10938356 * (10 ** -31) * (9 * (10 ** 9))))
     r = (n ** 2) * 5.29 * (10 ** -11)
     return r
 
 # Cálculo da velocidade (m/s)
 def velocidade():
-    #v = Decimal(2 * math.pi * (3 * (10 ** 8)) / lE)
     v = 2.187 * (10 ** 6) / n
     return v
 
 # Cálculo do comprimento de onda De Broglie do elétron (m)
 def comprimento_onda_eletron():
-    #lE = Decimal(h / (9.10938356 * (10 ** -31) * v))
-    #lE = Decimal(5,29 * (10 ** -11) / n)
     lE = h / (mE * v)
     return lE
 
 # Cálculo da energia cinética (eV)
 def energia_cinetica():
-    #K = Decimal((1 / 2) * (9.10938356 * (10 ** -31)) * (v ** 2))
     K = +13.6 / n ** 2
     return K
 
 # Cálculo da energia potencial (eV)
 def energia_potencial():
-    #U = Decimal(-1 * (9 * (10 ** 9)) * (1.60217662 * (10 ** -19)) / r)
     U = -27.2 / n ** 2
     return U
 
 # Cálculo da energia total (eV)
 def energia_total():
-    #E = Decimal(K + U)
     E = -13.6 / (n ** 2)
     return E
 
 # Funções para conversões
 # Todos os conversores vão para uma unidade padrão e depois convertem para a unidade desejada
 
+# Conversor de eV -> J
 def eV_J(num):
     num_c = num * 1.60217662 * (10 ** -19)
     return num_c
 
+# Conversor de J -> eV
 def J_eV(num):
     num_c = num / 1.60217662 * (10 ** -19)
     return num_c
 
+# Conversor de eV -> cal
 def eV_cal(num):
     num_c = num * 2.3900573613767 * (10 ** 20)
     return num_c
 
+# Conversor de cal -> eV
 def cal_eV(num):
     num_c = num / 2.3900573613767 * (10 ** 20)
     return num_c
 
+# Conversor de eV -> kcal
 def eV_kcal(num):
     num_c = num * 2.3900573613767 * (10 ** 17)
     return num_c
 
+# Conversor de kcal -> eV
 def kcal_eV(num):
     num_c = num / 2.3900573613767 * (10 ** 17)
     return num_c
 
+# Conversor de eV -> BTU
 def eV_Btu(num):
     num_c = num * 3.826733324 * (10 ** 19)
     return num_c
 
+# Conversor de BTU -> eV
 def Btu_eV(num):
     num_c = num / 3.826733324 * (10 ** 19)
     return num_c
 
+# Conversor de eV -> kWh
 def eV_kWh(num):
     num_c = num * 2.7777777777778 * (10 ** -7)
     return num_c
 
+# Conversor de kWh -> eV
 def kWh_eV(num):
     num_c = num / 2.7777777777778 * (10 ** -7)
     return num_c
 
+# Conversor de eV -> Wh
 def eV_Wh(num):
     num_c = num * 3.6 * (10 ** -6)
     return num_c
 
+# Conversor de eV -> Wh
 def Wh_eV(num):
     num_c = num / 3.6 * (10 ** -6)
     return num_c
@@ -210,21 +215,6 @@ def metros_pm(num):
 def pm_metros(num):
     num_c = num / 1e12
     return num_c
-
-# # Conversor de eV -> J
-# def eV_J(num):
-#     num_c = num * 1.60217662 * (10 ** -19)
-#     return num_c
-
-# # Conversor de J -> eV
-# def J_eV(num):
-#     num_c = num / 1.60217662 * (10 ** -19)
-#     return num_c
-
-# # Conversor de eV -> cal
-# def eV_cal(num):
-#     num_c = num * 2.3900573613767 * (10 ** 20)
-#     return num_c
 
 def conversor2():
     global num, num_c, num_c2
@@ -597,7 +587,7 @@ def opcao4():
 
 # Função opcao_5: Trata tanto a conversão de f ou lambda para E, quanto de E para f e lambda
 def opcao_5():
-  global E_foton, Freq_foton, Lamb_foton
+#   global E_foton, Freq_foton, Lamb_foton
   print("Escolha o tipo de cálculo:")
   print(
       "1 - Dada a frequência (f) ou comprimento de onda (λ) do fóton, calcular a energia (E) do fóton."
