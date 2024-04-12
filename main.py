@@ -985,6 +985,7 @@ def menu_conversores():
 
     elif option == '0':
         clear_screen()
+        return
 
     else:
         print('Opção inválida. Escolha uma opção válida.')
