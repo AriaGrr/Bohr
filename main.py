@@ -455,7 +455,7 @@ def conversor1():
     clear_screen()
     print(f'Entrada: {num} {a}')
     print(f'Saída: {num_c2} {b}')
-    print(f'Saida arredondada: {num_c2:.4g} {b}')
+    #print(f'Saida arredondada: {num_c2:.4g} {b}')
     input('Pressione Enter para continuar...')
 
 def conversor2():
@@ -564,7 +564,7 @@ def conversor2():
     clear_screen()
     print(f'Entrada: {num} {a}')
     print(f'Saída: {num_c2} {b}')
-    print(f'Saida arredondada: {num_c2:.4g} {b}')
+    #print(f'Saida arredondada: {num_c2:.4g} {b}')
     input('Pressione Enter para continuar...')
 
 def conversor3():
@@ -649,7 +649,7 @@ def conversor3():
     clear_screen()
     print(f'Entrada: {num} {a}')
     print(f'Saída: {num_c2} {b}')
-    print(f'Saida arredondada: {num_c2:.4g} {b}')
+    #print(f'Saida arredondada: {num_c2:.4g} {b}')
     input('Pressione Enter para continuar...')
 
 
