@@ -970,16 +970,19 @@ def menu_conversores():
 
     if option == '1':
         print('Opção 1 selecionada...')
+        clear_screen()
         conversor1()
         limpar_variaveis()
 
     elif option == '2':
         print('Opção 2 selecionada...')
+        clear_screen()
         conversor2()
         limpar_variaveis()
 
     elif option == '3':
         print('Opção 3 selecionada...')
+        clear_screen()
         conversor3()
         limpar_variaveis()
 
@@ -1020,16 +1023,22 @@ def menu():
   option = input('Escolha uma opção: ')
 
   if option == '1':
+    clear_screen()
     opcao1()
   elif option == '2':
+    clear_screen()
     opcao2()
   elif option == '3':
+    clear_screen()
     opcao3()
   elif option == '4':
+    clear_screen()
     opcao4()
   elif option == '5':
+    clear_screen()
     opcao5()
   elif option == '6':
+    clear_screen()
     opcao6()
   elif option == '0':
     clear_screen()
