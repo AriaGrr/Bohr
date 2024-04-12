@@ -1,9 +1,11 @@
-
 # Turma 725, Equipe 1:
 # Marjorie Luize Martins Costa, RA: 24223084-5
 # Paulo Andre de Oliveira Hirata, RA: 24.123.086-1
 # Diogo Santos Linna, RA: 24.123.003-6
 # Victor Merker Binda, RA:
+
+# Energia > 13,6 o átomo é ionizado (Se o código quebra ele é ionizado).
+# 100.000 -> perto de infinito para teste
 
 # Bibliotecas
 import math
@@ -17,8 +19,8 @@ teste = 0 # Variável para testar se é a primeira vez que o programa é executa
 h = 6.62607015 * 10 ** -34 # Constante de Planck em J.s
 h2 = 4.135667696 * 10 ** -15 # Constante de Planck em eV.s
 mE = 9.10938356 * 10 ** -31 # Massa do elétron em kg
-hev = 4.136*10**-15
-c = 3*10**8
+hev = 4.136*10**-15 # Constante de Planck em eV.s
+c = 3*10**8 # Velocidade da luz no vácuo em m/s
 
 # Variaveis
 n = 0 # Número quântico
