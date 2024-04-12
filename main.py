@@ -456,6 +456,7 @@ def conversor1():
     print(f'Entrada: {num} {a}')
     print(f'Saída: {num_c2} {b}')
     print(f'Saida arredondada: {num_c2:.4g} {b}')
+    input('Pressione Enter para continuar...')
 
 def conversor2():
     global num, num_c, num_c2
@@ -564,6 +565,7 @@ def conversor2():
     print(f'Entrada: {num} {a}')
     print(f'Saída: {num_c2} {b}')
     print(f'Saida arredondada: {num_c2:.4g} {b}')
+    input('Pressione Enter para continuar...')
 
 def conversor3():
     global num, num_c, num_c2
@@ -648,6 +650,8 @@ def conversor3():
     print(f'Entrada: {num} {a}')
     print(f'Saída: {num_c2} {b}')
     print(f'Saida arredondada: {num_c2:.4g} {b}')
+    input('Pressione Enter para continuar...')
+
 
 # Opções do menu de cálculos
 
@@ -671,7 +675,7 @@ def opcao1():
     print(f'Energia cinética (K): {K:.4g} eV')
     print(f'Energia potencial (U): {U:.4g} eV')
     print(f'Energia total (E): {E:.4g} eV')
-    print(f'Comprimento de onda do elétron (lE): {lE:.4g} m')
+    print(f'Comprimento de onda De Broglie do elétron (lE): {lE:.4g} m')
     input('Pressione Enter para continuar...')
     limpar_variaveis()
 
@@ -682,9 +686,9 @@ def opcao2():
     ni = int(input('Digite o número quântico inicial (ni): '))
     nf = int(input('Digite o número quântico final (nf): '))
     
-    eF = energia_foton()
-    f = freq_foton()
-    lF = lamb_foton()
+    eF = abs(energia_foton())
+    f = abs(freq_foton())
+    lF = abs(lamb_foton())
     
     clear_screen()
     print('Entrada:')
@@ -984,7 +988,8 @@ def menu_conversores():
 
     else:
         print('Opção inválida. Escolha uma opção válida.')
-        
+
+    menu_conversores()
 
 # Function to call the menu
 def menu():
@@ -1053,9 +1058,21 @@ while True:
         print('Limitações:')
         print(" ")
         print('- O modelo de Bohr é um modelo simplificado e não leva em consideração todos os aspectos da estrutura atômica.')
-        print('- O programa pode apresentar resultados imprecisos para alguns átomos e para alguns cálculos.:')
+        print('- O programa pode apresentar resultados imprecisos para alguns átomos e para alguns cálculos.')
         print(" ")
-
+        print('Relações dos nomes de variaveis usadas nos cálculos:')
+        print(" ")
+        print('- Energia do fóton (eF)')
+        print('- Comprimento de onda do fóton (lF)')
+        print('- Frequência do fóton (f)')
+        print('- Número quântico (n)')
+        print('- Raio da órbita (r)')
+        print('- Velocidade do elétron (v)')
+        print('- Comprimento de onda de Broglie do elétron (lE)')
+        print('- Energia cinética (K)')
+        print('- Energia potencial (U)')
+        print('- Energia total (E)')     
+        print(" ")
         print('Pressione Enter para continuar...')
         input() 
         teste = Decimal(1)
